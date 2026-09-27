@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hizmetler — Eda Yalanız</title>
+<meta name="description" content="Gelin makyajı, nişan ve kına, özel gün ve editoryal çekim makyajı hizmetleri.">
+<meta name="theme-color" content="#120d0b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hizmetler — Eda Yalanız">
+<meta property="og:description" content="Gelin makyajı, nişan ve kına, özel gün ve editoryal çekim makyajı hizmetleri.">
+<meta property="og:image" content="assets/img/hero.jpg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/main.css">
+<script>
+(function (h) {
+  h.className = h.className.replace('no-js', 'js');
+  var r = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (r) h.classList.add('reduced');
+  try {
+    var l = sessionStorage.getItem('ey-pt');
+    sessionStorage.removeItem('ey-pt');
+    if (l && !r) { h.classList.add('is-entering'); h.setAttribute('data-pt-label', l); }
+    if (h.hasAttribute('data-loader') && !r && !l && !sessionStorage.getItem('ey-seen')) h.classList.add('is-loading');
+  } catch (e) {}
+  setTimeout(function () { if (!window.__eyReady) { h.classList.add('failsafe'); h.classList.remove('is-entering', 'is-loading'); } }, 5000);
+  setTimeout(function () { h.classList.remove('is-entering', 'is-loading'); }, 8000);
+})(document.documentElement);
+</script>
+</head>
+<body data-page="services">
+
+<a class="skip" href="#main">İçeriğe geç</a>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader__panel loader__panel--top"></div>
+  <div class="loader__panel loader__panel--bottom"></div>
+  <div class="loader__bar"><i></i></div>
+  <div class="loader__content">
+    <div class="loader__name">Eda Yalanız</div>
+    <div class="loader__row"><span class="label" lang="en">Makeup Artist</span><span class="loader__count">000</span></div>
+  </div>
+</div>
+
+<div class="pt" aria-hidden="true">
+  <div class="pt__cols"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="pt__label"><span></span></div>
+</div>
+
+<div class="cursor" aria-hidden="true">
+  <div class="cursor__ring"><span class="cursor__label"></span></div>
+  <div class="cursor__dot"></div>
+</div>
+
+<svg class="sr-only" aria-hidden="true" focusable="false" width="0" height="0">
+  <filter id="fx-distort" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.006 0.014" numOctaves="2" seed="4" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<header class="header">
+  <a class="brand" href="index.html" data-magnetic="0.25" aria-label="Eda Yalanız — Ana sayfa">
+    <span class="brand__name">Eda Yalanız</span>
+    <span class="brand__role" lang="en">Makeup Artist</span>
+  </a>
+  <div class="header__actions">
+    <a class="pill" href="iletisim.html" data-magnetic="0.3" data-cursor="BOOK"><span class="roll"><span>Randevu</span><span aria-hidden="true">Randevu</span></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menüyü aç" data-magnetic="0.3">
+      <span class="menu-btn__lines" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menüsü" inert>
+  <div class="menu__bg"></div>
+  <div class="menu__inner">
+    <nav aria-label="Ana menü">
+      <ul class="menu__list">
+        <li class="menu__item"><span class="menu__rule" aria-hidden="true"></span>
+          <a class="menu__link" href="index.html" data-cursor="OPEN">
+            <span class="menu__num">01</span><span class="menu__text">Ana Sayfa</span><em class="menu__tag">Giriş</em>
+          </a>
+        </li>
+        <li class="menu__item"><span class="menu__rule" aria-hidden="true"></span>
+          <a class="menu__link" href="hizmetler.html" aria-current="page" data-cursor="HERE">
+            <span class="menu__num">02</span><span class="menu__text">Hizmetler</span><em class="menu__tag">Işık</em>
+          </a>
+        </li>
+        <li class="menu__item"><span class="menu__rule" aria-hidden="true"></span>
+          <a class="menu__link" href="portfolyo.html" data-cursor="OPEN">
+            <span class="menu__num">03</span><span class="menu__text">Portfolyo</span><em class="menu__tag">İşler</em>
+          </a>
+        </li>
+        <li class="menu__item"><span class="menu__rule" aria-hidden="true"></span>
+          <a class="menu__link" href="iletisim.html" data-cursor="OPEN">
+            <span class="menu__num">04</span><span class="menu__text">İletişim</span><em class="menu__tag">Merhaba</em>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="menu__media" aria-hidden="true">
+        <figure class="menu__img" data-menu-img="0"><img src="assets/img/service-1-sm.jpg" srcset="assets/img/service-1-sm.jpg 600w, assets/img/service-1.jpg 1200w" sizes="34vw" width="1200" height="1560" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="menu__img" data-menu-img="1"><img src="assets/img/work-02-sm.jpg" srcset="assets/img/work-02-sm.jpg 900w, assets/img/work-02.jpg 1800w" sizes="34vw" width="1800" height="1200" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="menu__img" data-menu-img="2"><img src="assets/img/work-04-sm.jpg" srcset="assets/img/work-04-sm.jpg 600w, assets/img/work-04.jpg 1200w" sizes="34vw" width="1200" height="1560" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="menu__img" data-menu-img="3"><img src="assets/img/about-sm.jpg" srcset="assets/img/about-sm.jpg 600w, assets/img/about.jpg 1200w" sizes="34vw" width="1200" height="1560" alt="" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="menu__foot">
+      <div class="menu__foot-col"><span class="label">Randevu</span><a class="u-link" href="https://wa.me/905000000000" target="_blank" rel="noopener">WhatsApp</a><a class="u-link" href="mailto:merhaba@edayalanizmakeup.com">merhaba@edayalanizmakeup.com</a></div>
+      <div class="menu__foot-col"><span class="label">Sosyal</span><a class="u-link" href="https://instagram.com/edayalanizmakeup" target="_blank" rel="noopener">Instagram</a></div>
+      <div class="menu__foot-col"><span class="label">Konum</span><span>Türkiye · Randevu ile</span></div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="page-hero theme-paper">
+    <span class="label" data-intro>Hizmetler</span>
+    <h1 class="display page-hero__title" data-split="chars" data-intro>Her gün için <em>bir ışık.</em></h1>
+    <div class="page-hero__row">
+      <p class="lead muted" data-intro>Gelin sabahından stüdyo setine kadar; her uygulama yüzüne, gününe ve ışığa göre yeniden kurgulanır.</p>
+      <dl class="page-hero__meta" data-intro>
+        <div><dt>Hizmet</dt><dd>04 alan</dd></div>
+        <div><dt>Randevu</dt><dd>Önceden planlanır</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="expand theme-paper" aria-label="Öne çıkan görsel">
+    <figure class="expand__media"><img src="assets/img/scene-4-sm.jpg" srcset="assets/img/scene-4-sm.jpg 1000w, assets/img/scene-4.jpg 2000w" sizes="100vw" width="2000" height="1250" alt="" loading="lazy" decoding="async"><figcaption class="expand__caption">Yüzüne sadık, <em>ışığa hazır.</em></figcaption></figure>
+  </section>
+
+  <section class="section theme-dark" aria-labelledby="panels-title">
+    <div class="section__head">
+      <div>
+        <span class="label">(01) Uygulamalar</span>
+        <h2 class="display" id="panels-title" data-split="lines" style="font-size: var(--fs-d2)">Üzerine gel, <em>keşfet.</em></h2>
+      </div>
+      <p class="muted" style="max-width: 34ch">Masaüstünde fareyle, mobilde dokunarak her hizmetin detayını aç.</p>
+    </div>
+    <div class="panels">
+      <article class="panel is-active" id="gelin">
+        <div class="panel__bg"><img src="assets/img/service-1-sm.jpg" srcset="assets/img/service-1-sm.jpg 600w, assets/img/service-1.jpg 1200w" sizes="(max-width: 900px) 100vw, 60vw" width="1200" height="1500" alt="" loading="lazy" decoding="async"></div>
+        <button class="panel__toggle" type="button" aria-expanded="true" aria-controls="gelin-body" data-cursor="DISCOVER">
+          <span class="panel__num">01 / 04</span>
+          <span class="panel__vtitle">Gelin Makyajı</span>
+        </button>
+        <div class="panel__body" id="gelin-body">
+          <h3 class="panel__title">Gelin <em>Makyajı</em></h3>
+          <p class="panel__desc">Sabahın ilk ışığından gecenin son dansına kadar kalıcı; fotoğrafta ve gerçekte aynı duran, sana ait bir gelin ışığı.</p>
+          <ul class="panel__list"><li>Ön görüşme ve stil planı</li><li>Prova seansı</li><li>Düğün günü uygulama</li><li>Gün boyu rötuş önerileri</li></ul>
+          <div class="panel__foot"><span lang="en">Bridal</span><a class="pill" href="iletisim.html?hizmet=gelin" data-cursor="BOOK" data-magnetic="0.25"><span class="roll"><span>Randevu al</span><span aria-hidden="true">Randevu al</span></span></a></div>
+        </div>
+      </article>
+      <article class="panel" id="nisan-kina">
+        <div class="panel__bg"><img src="assets/img/service-2-sm.jpg" srcset="assets/img/service-2-sm.jpg 600w, assets/img/service-2.jpg 1200w" sizes="(max-width: 900px) 100vw, 60vw" width="1200" height="1500" alt="" loading="lazy" decoding="async"></div>
+        <button class="panel__toggle" type="button" aria-expanded="false" aria-controls="nisan-kina-body" data-cursor="DISCOVER">
+          <span class="panel__num">02 / 04</span>
+          <span class="panel__vtitle">Nişan & Kına</span>
+        </button>
+        <div class="panel__body" id="nisan-kina-body">
+          <h3 class="panel__title">Nişan <em>&amp; Kına</em></h3>
+          <p class="panel__desc">Kınanın sıcak ışığına, nişanın zarif sadeliğine göre tonlanan; geceyi taşıyan, dans ettikçe bozulmayan makyaj.</p>
+          <ul class="panel__list"><li>Kıyafet ve konsepte göre tonlama</li><li>Uzun süre kalıcı uygulama</li><li>Işık ve fotoğraf uyumu</li></ul>
+          <div class="panel__foot"><span lang="en">Engagement</span><a class="pill" href="iletisim.html?hizmet=nisan-kina" data-cursor="BOOK" data-magnetic="0.25"><span class="roll"><span>Randevu al</span><span aria-hidden="true">Randevu al</span></span></a></div>
+        </div>
+      </article>
+      <article class="panel" id="ozel-gun">
+        <div class="panel__bg"><img src="assets/img/service-3-sm.jpg" srcset="assets/img/service-3-sm.jpg 600w, assets/img/service-3.jpg 1200w" sizes="(max-width: 900px) 100vw, 60vw" width="1200" height="1500" alt="" loading="lazy" decoding="async"></div>
+        <button class="panel__toggle" type="button" aria-expanded="false" aria-controls="ozel-gun-body" data-cursor="DISCOVER">
+          <span class="panel__num">03 / 04</span>
+          <span class="panel__vtitle">Özel Gün</span>
+        </button>
+        <div class="panel__body" id="ozel-gun-body">
+          <h3 class="panel__title">Özel <em>Gün</em></h3>
+          <p class="panel__desc">Mezuniyet, davet, doğum günü… Kısa sürede hazırlanan, abartmadan iz bırakan bir görünüm.</p>
+          <ul class="panel__list"><li>Davet, mezuniyet, kutlama</li><li>Gündüz ya da gece görünümü</li><li>Kişiye özel ton seçimi</li></ul>
+          <div class="panel__foot"><span lang="en">Special Day</span><a class="pill" href="iletisim.html?hizmet=ozel-gun" data-cursor="BOOK" data-magnetic="0.25"><span class="roll"><span>Randevu al</span><span aria-hidden="true">Randevu al</span></span></a></div>
+        </div>
+      </article>
+      <article class="panel" id="editoryal">
+        <div class="panel__bg"><img src="assets/img/service-4-sm.jpg" srcset="assets/img/service-4-sm.jpg 600w, assets/img/service-4.jpg 1200w" sizes="(max-width: 900px) 100vw, 60vw" width="1200" height="1500" alt="" loading="lazy" decoding="async"></div>
+        <button class="panel__toggle" type="button" aria-expanded="false" aria-controls="editoryal-body" data-cursor="DISCOVER">
+          <span class="panel__num">04 / 04</span>
+          <span class="panel__vtitle">Editoryal & Çekim</span>
+        </button>
+        <div class="panel__body" id="editoryal-body">
+          <h3 class="panel__title">Editoryal <em>&amp; Çekim</em></h3>
+          <p class="panel__desc">Kamera, ışık ve konsepte göre kurgulanan; stüdyo ve dış çekimler için tasarlanan makyaj.</p>
+          <ul class="panel__list"><li>Konsept ve moodboard çalışması</li><li>Stüdyo ve dış çekim</li><li>Set boyunca rötuş</li></ul>
+          <div class="panel__foot"><span lang="en">Editorial</span><a class="pill" href="iletisim.html?hizmet=editoryal" data-cursor="BOOK" data-magnetic="0.25"><span class="roll"><span>Randevu al</span><span aria-hidden="true">Randevu al</span></span></a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section process theme-bone" aria-labelledby="process-title">
+    <div class="section__head">
+      <div>
+        <span class="label">(02) Süreç</span>
+        <h2 class="display" id="process-title" data-split="lines" style="font-size: var(--fs-d2)">Üç adımda <em>hazır.</em></h2>
+      </div>
+    </div>
+    <ol class="process__list">
+      <li class="process__card">
+        <span class="process__num">01</span>
+        <div class="process__body"><h3>Tanışma</h3><p>Günü, kıyafeti, mekânı ve ışığı konuşuruz. Referanslarını inceler, sana en çok yakışacak yönü birlikte belirleriz.</p></div>
+      </li>
+      <li class="process__card">
+        <span class="process__num">02</span>
+        <div class="process__body"><h3>Prova</h3><p>Planı yüzünde deneriz. Tonları, kalıcılığı ve fotoğraftaki duruşu test eder, son dokunuşları netleştiririz.</p></div>
+      </li>
+      <li class="process__card">
+        <span class="process__num">03</span>
+        <div class="process__body"><h3>Gün</h3><p>Sakin, zamanında ve hazırlıklı. Uygulama biter, sen yalnızca anın tadını çıkarırsın.</p></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section cta theme-paper">
+    <span class="label">Randevu</span>
+    <h2 class="display cta__title" data-split="chars">Günün için <em>yer ayırt.</em></h2>
+    <a class="cta__btn" href="iletisim.html" data-magnetic="0.5" data-cursor="BOOK"><span data-magnetic-inner>Randevu<br>Al</span></a>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__top">
+    <p class="footer__lead">Işığın seni bulduğu an için.</p>
+    <div class="footer__col"><span class="label">Sayfalar</span><a class="u-link" href="index.html">Ana Sayfa</a><a class="u-link" href="hizmetler.html">Hizmetler</a><a class="u-link" href="portfolyo.html">Portfolyo</a><a class="u-link" href="iletisim.html">İletişim</a></div>
+    <div class="footer__col"><span class="label">İletişim</span><a class="u-link" href="tel:+905000000000">+90 5XX XXX XX XX</a><a class="u-link" href="mailto:merhaba@edayalanizmakeup.com">E-posta</a><span>Türkiye · Randevu ile</span></div>
+    <div class="footer__col"><span class="label">Sosyal</span><a class="u-link" href="https://instagram.com/edayalanizmakeup" target="_blank" rel="noopener">Instagram</a><a class="u-link" href="https://wa.me/905000000000" target="_blank" rel="noopener">WhatsApp</a></div>
+  </div>
+  <div class="footer__mark" aria-hidden="true"><span>Eda Yalanız</span></div>
+  <div class="footer__bottom">
+    <span>© <span data-year>2026</span> Eda Yalanız. Tüm hakları saklıdır.</span>
+    <a class="to-top u-link" href="#main" data-scroll-top data-magnetic="0.3">Başa dön <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 11V1M1.5 5.5 6 1l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
+  </div>
+</footer>
+
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/vendor/SplitText.min.js" defer></script>
+<script src="assets/vendor/lenis.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
