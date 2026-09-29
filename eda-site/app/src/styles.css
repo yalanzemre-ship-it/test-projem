@@ -1,0 +1,25 @@
+/* Cascade layer order: reset lowest, then Tailwind base, then components and
+ * utilities. The site's own design system lives in ./site.css (unlayered, so
+ * it wins over everything the scaffold brings in). */
+@layer reset, theme, base, components, utilities;
+
+@import "tailwindcss" source(none);
+@source "../src";
+@source "../packages/quanta/src";
+@import "@higgsfield/quanta/tailwind.css";
+
+/* Scaffold component styles, kept so the template's unused components still build. */
+@import "./components/composer/composer.css";
+@import "./components/media-card/media-card.css";
+@import "./components/generation-card/generation-card.css";
+@import "./components/setting-trigger/setting-trigger.css";
+@import "./components/prompt-box/prompt-box.css";
+@import "./components/icon-tile/icon-tile.css";
+
+@import "tw-animate-css";
+
+@import "./site.css";
+
+@theme {
+  --spacing: 0.25rem;
+}
