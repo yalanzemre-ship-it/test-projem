@@ -54,7 +54,7 @@ bun install >/dev/null 2>&1
 grep -q '"gsap"' package.json || bun add gsap@^3.13.0 lenis@^1.3.4 >/dev/null 2>&1
 
 log "route tree + build"
-bun run build > "$W/build.log" 2>&1 || { tail -40 "$W/build.log"; exit 1; }
+bunx vite build > "$W/build.log" 2>&1 || { tail -40 "$W/build.log"; exit 1; }
 log "typecheck"
 bun run typecheck > "$W/tsc.log" 2>&1 || { tail -40 "$W/tsc.log"; exit 1; }
 
