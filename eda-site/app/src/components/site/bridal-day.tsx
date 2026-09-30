@@ -29,7 +29,8 @@ export function BridalDay() {
     gsap.set(frames.slice(1), { clipPath: "inset(100% 0% 0% 0%)" });
     gsap.set(imgs[0], { scale: 1.08 });
     gsap.set(imgs.slice(1), { scale: 1.2, yPercent: 5 });
-    gsap.set(caps, { yPercent: 110, autoAlpha: 0 });
+    // y: 0 clears any pixel offset so yPercent is the only vertical move
+    gsap.set(caps, { y: 0, yPercent: 110, autoAlpha: 0 });
     gsap.set(caps[0], { yPercent: 0, autoAlpha: 1 });
 
     const tl = gsap.timeline({

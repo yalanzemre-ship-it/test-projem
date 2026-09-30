@@ -1148,7 +1148,6 @@ main {
 }
 .day__cap:not(:first-child) {
   visibility: hidden;
-  transform: translateY(110%);
 }
 .day__num {
   --w: 125;
