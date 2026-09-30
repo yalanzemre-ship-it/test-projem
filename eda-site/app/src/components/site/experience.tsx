@@ -145,48 +145,6 @@ export function Cursor() {
   );
 }
 
-/** The page as a measuring instrument: a fixed ruler on the right edge whose marker reads scroll depth. */
-export function ScrollRuler() {
-  const rootRef = useRef<HTMLDivElement>(null);
-  const readRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-    let raf = 0;
-    const update = () => {
-      raf = 0;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
-      root.style.setProperty("--p", p.toFixed(4));
-      if (readRef.current) readRef.current.textContent = String(Math.round(p * 100)).padStart(3, "0");
-    };
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      cancelAnimationFrame(raf);
-    };
-  }, []);
-
-  return (
-    <div ref={rootRef} className="sruler" aria-hidden="true">
-      <div className="sruler__track">
-        <span className="sruler__marker">
-          <span className="sruler__read" ref={readRef}>
-            000
-          </span>
-        </span>
-      </div>
-    </div>
-  );
-}
-
 /** Shared SVG filter used by the photo hover distortion (see lib/distort.ts). */
 export function DistortDefs() {
   return (

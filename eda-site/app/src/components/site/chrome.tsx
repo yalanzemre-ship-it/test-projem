@@ -128,7 +128,6 @@ function Menu({ open, pathname }: { open: boolean; pathname: string }) {
               <Img src={item.img} sizes="34vw" alt="" />
             </div>
           ))}
-          <span className="menu__ticks" />
         </div>
         <div className="menu__foot">
           <a href={STUDIO.phoneHref}>{STUDIO.phoneDisplay}</a>

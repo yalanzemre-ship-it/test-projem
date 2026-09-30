@@ -46,7 +46,7 @@ export function Hero() {
         <div className="hero__ctas">
           <TLink to="/iletisim" className="hero-book" data-magnetic="0.35">
             <span className="hero-book__label">Randevu al</span>
-            <span className="hero-book__rule" aria-hidden="true" />
+            <span className="hero-book__line" aria-hidden="true" />
           </TLink>
           <TLink to="/hizmetler" className="hero-route">
             <span>Hizmetler</span>

@@ -10,7 +10,7 @@ import { reportHiggsfieldError } from "../lib/higgsfield-error-reporting";
 import appMetaJson from "../app-meta.json";
 import { STUDIO } from "../lib/site-data";
 import { Header, Footer } from "../components/site/chrome";
-import { Cursor, DistortDefs, ScrollRuler, SmoothScroll } from "../components/site/experience";
+import { Cursor, DistortDefs, SmoothScroll } from "../components/site/experience";
 import { TransitionProvider } from "../components/site/transition";
 
 declare const __HF_DESIGN_INSPECTOR__: boolean;
@@ -97,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
-      { name: "theme-color", content: "#15100F" },
+      { name: "theme-color", content: "#F7F1EF" },
       { property: "og:site_name", content: STUDIO.name },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
@@ -175,7 +175,6 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
-        <ScrollRuler />
         <Cursor />
         <SmoothScroll />
         <DistortDefs />

@@ -11,7 +11,7 @@ const STATS = [
   { value: "4", label: "Sertifika" },
 ];
 
-/** Kinetic statement: words gain ink as you scroll, while a measuring tape slides beneath. */
+/** Kinetic statement: words gain ink as you scroll. */
 export function Manifesto() {
   const ref = useRef<HTMLElement>(null);
 
@@ -25,20 +25,11 @@ export function Manifesto() {
     words.forEach((w, i) => {
       tl.fromTo(
         w,
-        { color: "#4b3d39", yPercent: rich ? 18 : 0 },
-        { color: ACCENT.has(i) ? "#c0736b" : "#f2e9e6", yPercent: 0, ease: "none", duration: 1 },
+        { color: "#d8cbc7", yPercent: rich ? 18 : 0 },
+        { color: ACCENT.has(i) ? "#9c544e" : "#1c1614", yPercent: 0, ease: "none", duration: 1 },
         i * 0.55,
       );
     });
-    gsap.fromTo(
-      el.querySelector(".tape__scale"),
-      { xPercent: 0 },
-      {
-        xPercent: -25,
-        ease: "none",
-        scrollTrigger: { trigger: el.querySelector(".tape"), start: "top bottom", end: "bottom top", scrub: 0.4 },
-      },
-    );
   });
 
   return (
@@ -51,9 +42,6 @@ export function Manifesto() {
         ))}
       </p>
       <div className="tape">
-        <div className="tape__window" aria-hidden="true">
-          <div className="tape__scale" />
-        </div>
         <dl className="tape__stats">
           {STATS.map((s) => (
             <div className="tape__stat" key={s.label}>
