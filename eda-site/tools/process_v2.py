@@ -25,7 +25,7 @@ BRAND = os.path.join(PUB, "assets/brand")
 os.makedirs(IMG, exist_ok=True)
 os.makedirs(BRAND, exist_ok=True)
 
-BG, FG, ACCENT, MUTE = (247, 241, 239), (28, 22, 20), (156, 84, 78), (107, 95, 90)
+BG, FG, ACCENT, MUTE = (245, 247, 250), (26, 28, 34), (156, 84, 78), (93, 99, 112)
 XW700 = os.path.join(FONTS, "Archivo-XW700.ttf")
 MONO = os.path.join(FONTS, "PlexMono-Medium.ttf")
 
@@ -34,6 +34,13 @@ with open(MANIFEST) as fh:
 for name, spec in assets.items():
     raw = urllib.request.urlopen(spec["url"]).read()
     im = Image.open(io.BytesIO(raw)).convert("RGB")
+    if spec.get("film"):
+        # soften the generated look: slight desaturation, lifted blacks, fine grain
+        from PIL import ImageEnhance
+        im = ImageEnhance.Color(im).enhance(0.9)
+        im = ImageEnhance.Contrast(im).enhance(0.95)
+        noise = Image.effect_noise(im.size, 18).convert("RGB")
+        im = Image.blend(im, noise, 0.035)
     for w in spec["widths"]:
         c = im if im.width <= w else im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
         c.save(os.path.join(IMG, f"{name}-{w}.webp"), quality=80, method=6)
@@ -60,8 +67,8 @@ S = max(W, H) / (1 - 2 * 0.22)
 with open(os.path.join(PUB, "favicon.svg"), "w") as fh:
     fh.write(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {round(S)} {round(S)}">'
-        f'<rect width="100%" height="100%" fill="#F7F1EF"/>'
-        f'<path transform="translate({round((S - W) / 2)} {round((S - H) / 2)})" fill="#1C1614" d="{sp.getCommands()}"/></svg>'
+        f'<rect width="100%" height="100%" fill="#F5F7FA"/>'
+        f'<path transform="translate({round((S - W) / 2)} {round((S - H) / 2)})" fill="#1A1C22" d="{sp.getCommands()}"/></svg>'
     )
 
 

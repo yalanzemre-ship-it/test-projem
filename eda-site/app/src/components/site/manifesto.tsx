@@ -25,8 +25,8 @@ export function Manifesto() {
     words.forEach((w, i) => {
       tl.fromTo(
         w,
-        { color: "#d8cbc7", yPercent: rich ? 18 : 0 },
-        { color: ACCENT.has(i) ? "#9c544e" : "#1c1614", yPercent: 0, ease: "none", duration: 1 },
+        { color: "#d3d8e0", yPercent: rich ? 18 : 0 },
+        { color: ACCENT.has(i) ? "#9c544e" : "#1a1c22", yPercent: 0, ease: "none", duration: 1 },
         i * 0.55,
       );
     });

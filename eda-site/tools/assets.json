@@ -1,1 +1,155 @@
-{}
+{
+ "hero-a": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093229_65fa36a4-bb64-4114-8176-b2ca80ae8934.png",
+  "widths": [
+   900,
+   1400,
+   2400
+  ],
+  "film": true
+ },
+ "hero-a-m": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093229_e18e6221-badc-4509-8494-7b700017fc15.png",
+  "widths": [
+   600,
+   1100
+  ],
+  "film": true
+ },
+ "hero-b": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093230_30b7687f-54f7-4436-af1c-222cf8cdd56a.png",
+  "widths": [
+   1000,
+   2000
+  ],
+  "film": true
+ },
+ "hero-b-m": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093230_6323682d-656d-4e8d-9497-59a7633b67f2.png",
+  "widths": [
+   600,
+   1100
+  ],
+  "film": true
+ },
+ "studio": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093229_59c6cc5b-3c74-436b-821a-7dfb80c527d1.png",
+  "widths": [
+   800,
+   1400
+  ],
+  "film": true
+ },
+ "day-1": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093229_a6aa7c87-addf-442f-bbea-efea58c9669d.png",
+  "widths": [
+   1000,
+   2000
+  ],
+  "film": true
+ },
+ "day-1-m": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093229_7c1d6554-8178-4745-a6cf-d02d06082aa0.png",
+  "widths": [
+   600,
+   1100
+  ],
+  "film": true
+ },
+ "day-2": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093229_5ec9d63e-902e-4b81-8021-1b2ee1bd3676.png",
+  "widths": [
+   1000,
+   2000
+  ],
+  "film": true
+ },
+ "day-2-m": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093229_477cae2d-23a9-476e-8b04-9c2e41bae392.png",
+  "widths": [
+   600,
+   1100
+  ],
+  "film": true
+ },
+ "day-3": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093229_ab06acc1-fb55-4e0e-b74e-64cc68b147e3.png",
+  "widths": [
+   1000,
+   2000
+  ],
+  "film": true
+ },
+ "day-3-m": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093229_7be76241-e42f-4e86-adce-8f6bc04259dc.png",
+  "widths": [
+   600,
+   1100
+  ],
+  "film": true
+ },
+ "day-4-m": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093236_b245cec9-3989-4b2e-88e2-a797df85220b.png",
+  "widths": [
+   600,
+   1100
+  ],
+  "film": false
+ },
+ "silk": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093236_67ee8227-6534-4b7a-b93c-933f1d51e7c4.png",
+  "widths": [
+   1000,
+   2000
+  ],
+  "film": false
+ },
+ "svc-gelin": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093236_d09d3f75-14c0-4687-acf4-f02b7758380d.png",
+  "widths": [
+   500,
+   800
+  ],
+  "film": false
+ },
+ "svc-ozel": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093236_fa75d37c-15f3-4488-8d9a-52a744081cf0.png",
+  "widths": [
+   500,
+   800
+  ],
+  "film": false
+ },
+ "svc-kalici": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093234_f8a5e012-6ce6-4a4c-9810-6d502d484d33.png",
+  "widths": [
+   500,
+   800
+  ],
+  "film": false
+ },
+ "svc-kas": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093236_13df2ee8-1d73-4046-91ad-e7a74a803c24.png",
+  "widths": [
+   500,
+   800
+  ],
+  "film": false
+ },
+ "svc-kirpik": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093236_06485d3a-1d6e-4a78-88c4-22c3490ceb75.png",
+  "widths": [
+   500,
+   800
+  ],
+  "film": false
+ },
+ "svc-sac": {
+  "url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_093236_946f5504-84e7-4857-8dfb-cc44dcedd7e5.png",
+  "widths": [
+   500,
+   800
+  ],
+  "film": false
+ }
+}

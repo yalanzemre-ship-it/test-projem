@@ -8,20 +8,20 @@ export type ImgSrc = { base: string; widths: number[]; w: number; h: number };
 const wide = (name: string, widths = [1000, 2000]): ImgSrc => ({
   base: `/assets/img/${name}`,
   widths,
-  w: 2688,
-  h: 1520,
+  w: 2752,
+  h: 1536,
 });
 const phone = (name: string): ImgSrc => ({
   base: `/assets/img/${name}`,
   widths: [600, 1100],
-  w: 1520,
-  h: 2688,
+  w: 1536,
+  h: 2752,
 });
 const tall = (name: string, widths = [500, 800]): ImgSrc => ({
   base: `/assets/img/${name}`,
   widths,
-  w: 1792,
-  h: 2240,
+  w: 1856,
+  h: 2304,
 });
 
 export const IMG = {

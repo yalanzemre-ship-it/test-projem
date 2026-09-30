@@ -97,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
-      { name: "theme-color", content: "#F7F1EF" },
+      { name: "theme-color", content: "#F5F7FA" },
       { property: "og:site_name", content: STUDIO.name },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
