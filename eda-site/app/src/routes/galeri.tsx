@@ -25,7 +25,7 @@ function GalleryPage() {
         title="Galeri"
         lead="Stüdyoda yapılan çalışmalardan bir seçki."
         img={IMG.day3}
-        alt="Sabah ışığında askıda gelinlik ve katlanmış duvak"
+        alt="Eda Yalanız düğün sabahı gelinin duvağını takıyor"
       />
       <GalleryGrid />
       <NextPage from="/galeri" />

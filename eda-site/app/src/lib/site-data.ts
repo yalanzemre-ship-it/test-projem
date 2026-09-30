@@ -8,14 +8,14 @@ export type ImgSrc = { base: string; widths: number[]; w: number; h: number };
 const wide = (name: string, widths = [1000, 2000]): ImgSrc => ({
   base: `/assets/img/${name}`,
   widths,
-  w: 2752,
-  h: 1536,
+  w: 2688,
+  h: 1520,
 });
 const tall = (name: string, widths = [500, 800]): ImgSrc => ({
   base: `/assets/img/${name}`,
   widths,
-  w: 1856,
-  h: 2304,
+  w: 1792,
+  h: 2240,
 });
 
 export const IMG = {
@@ -115,21 +115,21 @@ export const BRIDAL_DAY: Chapter[] = [
     title: "Önce konuşuruz.",
     text: "Cilt yapısı, saç rengi, gelinlik ve günün saati konuşulur. Plan buradan çıkar.",
     img: IMG.day1,
-    alt: "Masada yüz oranı çizimleri, pergel ve ruj denemeleri",
+    alt: "Eda Yalanız ön görüşmede defterine kaş oranlarını çiziyor",
   },
   {
     label: "Prova",
     title: "Sonra deneriz.",
     text: "Görünüm düğünden önce denenir, gün ışığında ve fotoğrafta kontrol edilir.",
     img: IMG.day2,
-    alt: "Prova masasında paletler, fondöten şişeleri ve fırçalar",
+    alt: "Eda Yalanız prova sırasında geline makyaj uyguluyor",
   },
   {
     label: "Sabah",
     title: "Gün acele etmez.",
     text: "Düğün sabahı her adım planlandığı sırayla, telaş olmadan uygulanır.",
     img: IMG.day3,
-    alt: "Sabah ışığında askıda gelinlik ve katlanmış duvak",
+    alt: "Eda Yalanız düğün sabahı gelinin duvağını takıyor",
   },
   {
     label: "Akşam",

@@ -36,7 +36,7 @@ export function About({ headingLevel = 2 }: { headingLevel?: 1 | 2 }) {
     <section className="about" ref={ref} aria-labelledby="about-title">
       <div className="about__media">
         <div className="about__frame">
-          <Img src={IMG.studio} sizes="(max-width: 760px) 100vw, 42vw" alt="Işıklı ayna karşısında tek bir makyaj koltuğu olan sakin stüdyo" />
+          <Img src={IMG.studio} sizes="(max-width: 760px) 100vw, 42vw" alt="Eda Yalanız stüdyosunda, aynanın yanında otururken" />
         </div>
       </div>
       <div className="about__body">

@@ -26,7 +26,7 @@ export function Hero() {
           src={IMG.heroA}
           sizes="100vw"
           priority
-          alt="Loş ışıkta makyaj stüdyosu: ışıklı ayna, sandalyeye bırakılmış gelin duvağı, mermer üzerinde fırçalar ve paletler"
+          alt="Eda Yalanız aydınlık makyaj stüdyosunda, yuvarlak aynanın yanında"
         />
         <div className="hero__shade" />
       </div>

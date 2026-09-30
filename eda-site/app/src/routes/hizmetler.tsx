@@ -25,7 +25,7 @@ function ServicesPage() {
         title="Hizmetler"
         lead="Gelin makyajından kaş tasarımına altı uzmanlık. Hepsi randevu ile, tek kişilik seanslarda."
         img={IMG.heroB}
-        alt="Mermer tezgâhta dantel duvak, deri rulo içinde fırçalar ve açık paletler"
+        alt="Eda Yalanız makyaj masasında fırçalarını düzenliyor"
       />
       <Services />
       <BridalDay />

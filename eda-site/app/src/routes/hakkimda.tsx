@@ -26,7 +26,7 @@ function AboutPage() {
         title="Hakkımda"
         lead="2021'den beri Nilüfer'de, aynı anda tek kişiyle."
         img={IMG.day1}
-        alt="Masada yüz oranı çizimleri, pergel ve ruj denemeleri"
+        alt="Eda Yalanız ön görüşmede defterine kaş oranlarını çiziyor"
       />
       <About />
       <Manifesto />
