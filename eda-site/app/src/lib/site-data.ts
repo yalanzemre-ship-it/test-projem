@@ -55,7 +55,10 @@ export const STUDIO = {
   instagram: "https://www.instagram.com/edayalanizmakeupp",
   facebook: "https://www.facebook.com/profile.php?id=61592817747456",
   addressLines: ["Odunluk Mah. İbrahim İşseverler Cad. No: 18", "Nilüfer / Bursa"],
-  maps: "https://maps.google.com/?q=Odunluk+Mahallesi+%C4%B0brahim+%C4%B0%C5%9Fseverler+Caddesi+No+18+Nil%C3%BCfer+Bursa",
+  // Google Maps listing: "Eda Yalanız Makeup Studio", Nilüfer / Bursa
+  maps: "https://www.google.com/maps/dir/?api=1&destination=Eda+Yalan%C4%B1z+Makeup+Studio+Nil%C3%BCfer+Bursa",
+  mapEmbed:
+    "https://www.google.com/maps?q=Eda%20Yalan%C4%B1z%20Makeup%20Studio%2C%20Odunluk%2C%20Nil%C3%BCfer%2C%20Bursa&hl=tr&z=16&output=embed",
   hours: ["Pazartesi ile Cumartesi, 10.00 ile 19.00 arası", "Pazar günleri yalnızca gelin randevuları"],
 };
 

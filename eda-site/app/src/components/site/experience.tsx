@@ -74,6 +74,11 @@ export function Cursor() {
       };
 
       const setTarget = (target: Element | null) => {
+        // Cross-origin iframes (the map) draw their own cursor; hide ours over them.
+        if (target?.tagName === "IFRAME") {
+          root.classList.remove("is-visible");
+          return;
+        }
         const labelled = target?.closest<HTMLElement>("[data-cursor]") ?? null;
         const interactive = target?.closest("a, button, [role='button'], input, textarea, select, summary") ?? null;
         const nextMagnet = target?.closest<HTMLElement>("[data-magnetic]") ?? null;

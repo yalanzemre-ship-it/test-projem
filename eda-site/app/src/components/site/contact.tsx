@@ -103,6 +103,19 @@ export function Contact({ headingLevel = 2 }: { headingLevel?: 1 | 2 }) {
           </dd>
         </div>
       </dl>
+      <div className="map">
+        <iframe
+          className="map__frame"
+          src={STUDIO.mapEmbed}
+          title="Eda Yalanız Makeup Studio konumu, Google Haritalar"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+        />
+        <a className="map__cta" href={STUDIO.maps} target="_blank" rel="noreferrer">
+          Yol tarifi <span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </section>
   );
 }
