@@ -66,7 +66,7 @@ export function BridalDay() {
         <div className="day__frames">
           {BRIDAL_DAY.map((c, i) => (
             <figure className="day__frame" key={c.label} style={{ zIndex: i + 1 }}>
-              <Img src={c.img} sizes="100vw" alt={c.alt} />
+              <Img src={c.img} mobile={c.mobile} sizes="100vw" alt={c.alt} />
             </figure>
           ))}
         </div>

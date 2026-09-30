@@ -25,6 +25,7 @@ function ServicesPage() {
         title="Hizmetler"
         lead="Gelin makyajından kaş tasarımına altı uzmanlık. Hepsi randevu ile, tek kişilik seanslarda."
         img={IMG.heroB}
+        mobile={IMG.heroBm}
         alt="Eda Yalanız makyaj masasında fırçalarını düzenliyor"
       />
       <Services />

@@ -24,6 +24,7 @@ export function Hero() {
       <div className="hero__media">
         <Img
           src={IMG.heroA}
+          mobile={IMG.heroAm}
           sizes="100vw"
           priority
           alt="Eda Yalanız aydınlık makyaj stüdyosunda, yuvarlak aynanın yanında"

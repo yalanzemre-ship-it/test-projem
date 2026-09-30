@@ -1,8 +1,8 @@
 {
-  "hero-a": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_073522_db3fd06a-42bf-4487-a0b4-402afb2535ee.png", "widths": [900, 1400, 2400]},
-  "hero-b": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_073523_b8905e7c-3e77-4b0e-8e70-132b1f0952e5.png", "widths": [1000, 2000]},
-  "studio": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_073522_f8635af2-a16e-4e0a-8d7b-8c448c2b672a.png", "widths": [800, 1400]},
-  "day-1": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_073523_1c763742-3b1d-4260-b54b-10010480f4fc.png", "widths": [1000, 2000]},
-  "day-2": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_073522_d68329da-6d88-4b0a-9dfa-772364624d19.png", "widths": [1000, 2000]},
-  "day-3": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_073522_51432054-46b1-47f2-8b1f-7e0b35f941ec.png", "widths": [1000, 2000]}
+  "hero-a-m": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_074723_81202048-1699-4344-bd99-3da25d894fa5.png", "widths": [600, 1100]},
+  "hero-b-m": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_074722_6e0b5962-c730-4992-b918-436bc3c5ee31.png", "widths": [600, 1100]},
+  "day-1-m": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_074722_1217677c-7bb1-44d0-a901-a9ae6a2a905a.png", "widths": [600, 1100]},
+  "day-2-m": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_074722_1f732b25-fb45-4a53-89e7-5608cbe6600d.png", "widths": [600, 1100]},
+  "day-3-m": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_074722_055b5ce5-fb8c-4b3e-a005-2686e88f0339.png", "widths": [600, 1100]},
+  "day-4-m": {"url": "https://d8j0ntlcm91z4.cloudfront.net/user_35Th326p988wTsUijiRXqyjK8MY/hf_20260930_074722_c5b8e3d5-b817-4fa6-952d-57d35c02277a.png", "widths": [600, 1100]}
 }

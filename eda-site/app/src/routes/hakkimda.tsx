@@ -26,6 +26,7 @@ function AboutPage() {
         title="Hakkımda"
         lead="2021'den beri Nilüfer'de, aynı anda tek kişiyle."
         img={IMG.day1}
+        mobile={IMG.day1m}
         alt="Eda Yalanız ön görüşmede defterine kaş oranlarını çiziyor"
       />
       <About />

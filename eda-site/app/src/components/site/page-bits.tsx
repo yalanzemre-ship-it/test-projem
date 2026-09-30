@@ -11,12 +11,14 @@ export function PageHead({
   title,
   lead,
   img,
+  mobile,
   alt,
 }: {
   path: PagePath;
   title: string;
   lead: ReactNode;
   img: ImgSrc;
+  mobile?: ImgSrc;
   alt: string;
 }) {
   const { index, total } = pageIndex(path);
@@ -34,7 +36,7 @@ export function PageHead({
       </h1>
       <p className="phead__lead">{lead}</p>
       <div className="phead__media">
-        <Img src={img} sizes="100vw" priority alt={alt} />
+        <Img src={img} mobile={mobile} sizes="100vw" priority alt={alt} />
       </div>
     </header>
   );

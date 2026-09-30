@@ -24,6 +24,7 @@ function ContactPage() {
         title="İletişim"
         lead="Randevu tek mesaj uzağınızda."
         img={IMG.day4}
+        mobile={IMG.day4m}
         alt="Akşam ışıklarında sandalyede gelin buketi ve duvak"
       />
       <Contact />

@@ -11,6 +11,12 @@ const wide = (name: string, widths = [1000, 2000]): ImgSrc => ({
   w: 2688,
   h: 1520,
 });
+const phone = (name: string): ImgSrc => ({
+  base: `/assets/img/${name}`,
+  widths: [600, 1100],
+  w: 1520,
+  h: 2688,
+});
 const tall = (name: string, widths = [500, 800]): ImgSrc => ({
   base: `/assets/img/${name}`,
   widths,
@@ -20,7 +26,13 @@ const tall = (name: string, widths = [500, 800]): ImgSrc => ({
 
 export const IMG = {
   heroA: wide("hero-a", [900, 1400, 2400]),
+  heroAm: phone("hero-a-m"),
   heroB: wide("hero-b"),
+  heroBm: phone("hero-b-m"),
+  day1m: phone("day-1-m"),
+  day2m: phone("day-2-m"),
+  day3m: phone("day-3-m"),
+  day4m: phone("day-4-m"),
   day1: wide("day-1"),
   day2: wide("day-2"),
   day3: wide("day-3"),
@@ -107,7 +119,7 @@ export const SERVICES: Service[] = [
   },
 ];
 
-export type Chapter = { label: string; title: string; text: string; img: ImgSrc; alt: string };
+export type Chapter = { label: string; title: string; text: string; img: ImgSrc; mobile: ImgSrc; alt: string };
 
 export const BRIDAL_DAY: Chapter[] = [
   {
@@ -115,6 +127,7 @@ export const BRIDAL_DAY: Chapter[] = [
     title: "Önce konuşuruz.",
     text: "Cilt yapısı, saç rengi, gelinlik ve günün saati konuşulur. Plan buradan çıkar.",
     img: IMG.day1,
+    mobile: IMG.day1m,
     alt: "Eda Yalanız ön görüşmede defterine kaş oranlarını çiziyor",
   },
   {
@@ -122,6 +135,7 @@ export const BRIDAL_DAY: Chapter[] = [
     title: "Sonra deneriz.",
     text: "Görünüm düğünden önce denenir, gün ışığında ve fotoğrafta kontrol edilir.",
     img: IMG.day2,
+    mobile: IMG.day2m,
     alt: "Eda Yalanız prova sırasında geline makyaj uyguluyor",
   },
   {
@@ -129,6 +143,7 @@ export const BRIDAL_DAY: Chapter[] = [
     title: "Gün acele etmez.",
     text: "Düğün sabahı her adım planlandığı sırayla, telaş olmadan uygulanır.",
     img: IMG.day3,
+    mobile: IMG.day3m,
     alt: "Eda Yalanız düğün sabahı gelinin duvağını takıyor",
   },
   {
@@ -136,6 +151,7 @@ export const BRIDAL_DAY: Chapter[] = [
     title: "İlk andaki gibi.",
     text: "Amaç basit: akşam fotoğraflarında da ilk andaki gibi durması.",
     img: IMG.day4,
+    mobile: IMG.day4m,
     alt: "Akşam ışıklarında sandalyede gelin buketi ve duvak",
   },
 ];
