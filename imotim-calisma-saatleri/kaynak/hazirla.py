@@ -31,6 +31,8 @@ def logo_cikar(pdf: Path) -> None:
     renk.save(ASSETS / "logo.png", optimize=True)
     # Sembol (T monogramı) ile yazı arasında 998-1078 px boş sütun var.
     renk.crop((0, 0, 998, renk.height)).save(ASSETS / "logo-ikon.png", optimize=True)
+    # Yalnızca yazı kısmı (İMOTİM / MOBİLYA AVM); dikey logo dizilimi için
+    renk.crop((1079, 141, 2172, 583)).save(ASSETS / "logo-yazi.png", optimize=True)
 
 
 def kirp_olcekle(src: Image.Image, kutu, boyut, ad: str) -> None:

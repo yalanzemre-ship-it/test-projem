@@ -42,7 +42,7 @@ html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; 
 .katman { position: absolute; inset: 0; }
 
 /* Logo, alfa maskesi olarak kullanılır; rengi background ile verilir. */
-.logo, .logo-ikon {
+.logo, .logo-ikon, .logo-yazi {
   display: block;
   background: #fff;
   -webkit-mask: url("assets/logo.png") center / contain no-repeat;
@@ -53,6 +53,11 @@ html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; 
   -webkit-mask-image: url("assets/logo-ikon.png");
   mask-image: url("assets/logo-ikon.png");
   aspect-ratio: 998 / 806;
+}
+.logo-yazi {
+  -webkit-mask-image: url("assets/logo-yazi.png");
+  mask-image: url("assets/logo-yazi.png");
+  aspect-ratio: 1093 / 442;
 }
 
 /* Montserrat'ta iki nokta küçük harf yüksekliğinde; rakamların ortasına hizalanır. */
