@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<link rel="stylesheet" href="cam.css">
+<style>
+  .ust-gradyan {
+    background: linear-gradient(180deg,
+      rgba(4, 30, 80, .30) 0%,
+      rgba(4, 30, 80, .12) 28%,
+      rgba(4, 30, 80, 0) 44%);
+  }
+  .alt-gradyan {
+    background: linear-gradient(0deg,
+      rgba(5, 14, 8, .60) 0%,
+      rgba(5, 14, 8, .25) 22%,
+      rgba(5, 14, 8, 0) 36%);
+  }
+  .ust {
+    position: absolute; top: 200px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .logo { width: 430px; }
+  .baslik { margin-top: 50px; text-shadow: 0 4px 24px rgba(0, 20, 60, .3); }
+  .alt-baslik { margin-top: 18px; color: #fff; }
+  .kart {
+    position: absolute; top: 1150px; left: 90px; width: 900px;
+    padding: 46px 60px 48px;
+    display: flex; flex-direction: column; align-items: center;
+    background: rgba(18, 18, 18, .44);
+  }
+  .kart .not { font-size: 24px; }
+  .kart .buyuk-saat { margin-top: 20px; font-size: 108px; }
+  /* 24 saatlik zaman çizelgesi; açık aralık 10:00-19:00 */
+  .cizelge { position: relative; width: 100%; margin-top: 50px; height: 96px; }
+  .cizelge .uc {
+    position: absolute; top: 0; transform: translateX(-50%);
+    font-size: 20px; font-weight: 600; letter-spacing: .3em; padding-left: .3em; color: var(--krem);
+    white-space: nowrap;
+  }
+  .cizelge .cubuk {
+    position: absolute; top: 40px; left: 0; right: 0; height: 16px; border-radius: 8px;
+    background: rgba(255, 255, 255, .16);
+  }
+  .cizelge .aralik {
+    position: absolute; top: 40px; height: 16px; border-radius: 8px;
+    left: calc(10 / 24 * 100%); width: calc(9 / 24 * 100%);
+    background: linear-gradient(90deg, #f3ead9, #d9c39b);
+    box-shadow: 0 0 22px rgba(239, 230, 214, .55);
+  }
+  .cizelge .aralik::before, .cizelge .aralik::after {
+    content: ""; position: absolute; top: -6px; width: 28px; height: 28px; border-radius: 50%;
+    background: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
+  }
+  .cizelge .aralik::before { left: -14px; }
+  .cizelge .aralik::after { right: -14px; }
+  .cizelge .tik {
+    position: absolute; top: 74px; transform: translateX(-50%);
+    font-size: 20px; font-weight: 500; color: rgba(255, 255, 255, .6);
+  }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-2-tam.png" width="1080" height="1920" alt="">
+  <div class="katman ust-gradyan"></div>
+  <div class="katman alt-gradyan"></div>
+
+  <div class="ust">
+    <div class="logo"></div>
+    <div class="baslik">Çalışma Saatleri</div>
+    <div class="alt-baslik">PAZARTESİ – PAZAR</div>
+  </div>
+
+  <div class="cam kart">
+    <div class="not"><i></i>HER GÜN AÇIĞIZ</div>
+    <div class="buyuk-saat">10<span class="iki-nokta">:</span>00<span class="tire"></span>19<span class="iki-nokta">:</span>00</div>
+    <div class="cizelge">
+      <span class="uc" style="left: calc(10 / 24 * 100%)">AÇILIŞ</span>
+      <span class="uc" style="left: calc(19 / 24 * 100%)">KAPANIŞ</span>
+      <div class="cubuk"></div>
+      <div class="aralik"></div>
+      <span class="tik" style="left: 0">00</span>
+      <span class="tik" style="left: 25%">06</span>
+      <span class="tik" style="left: 50%">12</span>
+      <span class="tik" style="left: 75%">18</span>
+      <span class="tik" style="left: 100%">24</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

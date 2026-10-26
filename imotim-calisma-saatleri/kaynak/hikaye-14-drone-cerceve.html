@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<link rel="stylesheet" href="cam.css">
+<style>
+  /* Arka plan: aynı fotoğrafın bulanık hali; çerçevedeki görüntü net ve 1:1. */
+  .arka { filter: blur(38px) brightness(.6) saturate(1.1); transform: scale(1.12); }
+  .logo { position: absolute; top: 200px; left: 50%; width: 400px; transform: translateX(-50%); }
+  .ust-baslik { position: absolute; top: 392px; left: 0; right: 0; text-align: center; }
+  .ust-baslik .baslik { font-size: 84px; }
+  .cerceve {
+    position: absolute; top: 520px; left: 70px; width: 940px; height: 660px;
+    border-radius: 40px; overflow: hidden;
+    border: 1.5px solid rgba(255, 255, 255, .38);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+  }
+  .cerceve .foto { left: -70px; top: -640px; }
+  .kart {
+    position: absolute; top: 1128px; left: 110px; width: 860px;
+    padding: 12px 0;
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: rgba(20, 18, 17, .46);
+  }
+  .hucre {
+    height: 88px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    border-bottom: 1.5px solid rgba(255, 255, 255, .14);
+  }
+  .hucre:nth-child(odd) { border-right: 1.5px solid rgba(255, 255, 255, .14); }
+  .hucre:last-child { grid-column: 1 / -1; border: 0; }
+  .hucre .ad { font-size: 20px; font-weight: 600; letter-spacing: .3em; padding-left: .3em; color: var(--krem); }
+  .hucre .saat { font-size: 34px; font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
+  .hucre .saat b { font-weight: 300; margin: 0 .3em; opacity: .7; }
+  .alt-not { position: absolute; top: 1556px; left: 0; right: 0; display: flex; justify-content: center; }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto arka" src="assets/foto-2-tam.png" width="1080" height="1920" alt="">
+
+  <div class="logo"></div>
+  <div class="ust-baslik"><div class="baslik">Çalışma Saatleri</div></div>
+
+  <div class="cerceve"><img class="foto" src="assets/foto-2-tam.png" width="1080" height="1920" alt=""></div>
+
+  <div class="cam kart">
+    <div class="hucre"><span class="ad">PAZARTESİ</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">SALI</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">ÇARŞAMBA</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">PERŞEMBE</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">CUMA</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">CUMARTESİ</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">PAZAR</span><span class="saat">10:00<b>–</b>19:00</span></div>
+  </div>
+
+  <div class="alt-not"><div class="not"><i></i>HAFTANIN HER GÜNÜ AÇIĞIZ</div></div>
+</div>
+</body>
+</html>

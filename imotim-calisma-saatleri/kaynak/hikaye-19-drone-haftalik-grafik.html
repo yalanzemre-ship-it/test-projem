@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<link rel="stylesheet" href="cam.css">
+<style>
+  .ust-gradyan {
+    background: linear-gradient(180deg,
+      rgba(4, 30, 80, .30) 0%,
+      rgba(4, 30, 80, .12) 28%,
+      rgba(4, 30, 80, 0) 44%);
+  }
+  .alt-gradyan {
+    background: linear-gradient(0deg,
+      rgba(5, 14, 8, .60) 0%,
+      rgba(5, 14, 8, .25) 22%,
+      rgba(5, 14, 8, 0) 36%);
+  }
+  .ust {
+    position: absolute; top: 200px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .logo { width: 430px; }
+  .baslik { margin-top: 50px; text-shadow: 0 4px 24px rgba(0, 20, 60, .3); }
+  .alt-baslik { margin-top: 18px; color: #fff; }
+  .kart {
+    position: absolute; top: 1120px; left: 90px; width: 900px;
+    padding: 40px 50px 36px;
+    background: rgba(18, 18, 18, .44);
+  }
+  .baslik-satir { display: flex; align-items: center; justify-content: space-between; }
+  .baslik-satir .not { font-size: 22px; }
+  .baslik-satir .saat { font-size: 34px; font-weight: 600; color: var(--krem); font-variant-numeric: tabular-nums lining-nums; }
+  .baslik-satir .saat b { font-weight: 300; margin: 0 .3em; opacity: .7; }
+
+  /* Grafik ekseni 08:00-21:00; çubuklar 10:00-19:00 aralığını gösterir */
+  .grafik { position: relative; margin-top: 34px; height: 300px; }
+  .grafik .cizgi {
+    position: absolute; left: 112px; right: 0; height: 0;
+    border-top: 2px dashed rgba(239, 230, 214, .5);
+  }
+  .grafik .sinir { position: absolute; left: 112px; right: 0; height: 1.5px; background: rgba(255, 255, 255, .12); }
+  .grafik .eksen {
+    position: absolute; left: 0; transform: translateY(-50%);
+    font-size: 24px; font-weight: 600; color: var(--krem); font-variant-numeric: tabular-nums;
+  }
+  .grafik .sutunlar {
+    position: absolute; left: 112px; right: 0; top: 46px; height: 208px;
+    display: grid; grid-template-columns: repeat(7, 1fr); justify-items: center;
+  }
+  .grafik .sutunlar span {
+    width: 54px; height: 100%; border-radius: 27px;
+    background: linear-gradient(180deg, #f6efe2, #d9c39b);
+    box-shadow: 0 0 22px rgba(239, 230, 214, .35);
+  }
+  .gun-adlari {
+    margin-top: 14px; padding-left: 112px;
+    display: grid; grid-template-columns: repeat(7, 1fr); justify-items: center;
+    font-size: 22px; font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-2-tam.png" width="1080" height="1920" alt="">
+  <div class="katman ust-gradyan"></div>
+  <div class="katman alt-gradyan"></div>
+
+  <div class="ust">
+    <div class="logo"></div>
+    <div class="baslik">Çalışma Saatleri</div>
+    <div class="alt-baslik">HAFTALIK PROGRAM</div>
+  </div>
+
+  <div class="cam kart">
+    <div class="baslik-satir">
+      <div class="not"><i></i>HER GÜN AÇIĞIZ</div>
+      <div class="saat">10:00<b>–</b>19:00</div>
+    </div>
+    <div class="grafik">
+      <div class="sinir" style="top: 0"></div>
+      <div class="sinir" style="top: 299px"></div>
+      <div class="cizgi" style="top: 46px"></div>
+      <div class="cizgi" style="top: 254px"></div>
+      <span class="eksen" style="top: 46px">10:00</span>
+      <span class="eksen" style="top: 254px">19:00</span>
+      <div class="sutunlar"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+    <div class="gun-adlari"><span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cmt</span><span>Paz</span></div>
+  </div>
+</div>
+</body>
+</html>

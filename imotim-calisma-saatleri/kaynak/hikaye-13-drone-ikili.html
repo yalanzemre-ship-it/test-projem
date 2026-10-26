@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<link rel="stylesheet" href="cam.css">
+<style>
+  /* İki drone fotoğrafı üst üste; ölçeklenmeden yalnızca kaydırılarak kırpılır. */
+  .yarim { position: absolute; left: 0; width: 1080px; overflow: hidden; }
+  .yarim .foto { position: absolute; }
+  .yarim.ust { top: 0; height: 1000px; }
+  .yarim.ust .foto { top: -300px; }
+  .yarim.alt { top: 1000px; height: 920px; }
+  .yarim.alt .foto { top: -640px; }
+  .ust-gradyan {
+    background: linear-gradient(180deg,
+      rgba(8, 34, 70, .58) 0%,
+      rgba(8, 34, 70, .30) 14%,
+      rgba(8, 34, 70, 0) 26%);
+  }
+  .alt-gradyan {
+    background: linear-gradient(0deg,
+      rgba(5, 14, 8, .78) 0%,
+      rgba(5, 14, 8, .40) 14%,
+      rgba(5, 14, 8, 0) 26%);
+  }
+  .dikis { position: absolute; top: 998px; left: 0; right: 0; height: 4px; background: rgba(239, 230, 214, .9); }
+  .logo { position: absolute; top: 200px; left: 50%; width: 430px; transform: translateX(-50%); }
+  .kart {
+    position: absolute; top: 828px; left: 110px; width: 860px;
+    padding: 40px 50px 44px;
+    display: flex; flex-direction: column; align-items: center;
+    background: rgba(20, 18, 17, .44);
+  }
+  .kart .baslik { font-size: 74px; }
+  .kart .buyuk-saat { margin-top: 18px; font-size: 108px; }
+  .kart .not { margin-top: 30px; font-size: 24px; }
+  .gunler-yazi {
+    position: absolute; left: 0; right: 0; bottom: 290px; text-align: center;
+    font-size: 28px; font-weight: 700; letter-spacing: .36em; padding-left: .36em;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, .4);
+  }
+</style>
+</head>
+<body>
+<div class="story">
+  <div class="yarim ust"><img class="foto" src="assets/foto-1-tam.png" width="1080" height="1920" alt=""></div>
+  <div class="yarim alt"><img class="foto" src="assets/foto-2-tam.png" width="1080" height="1920" alt=""></div>
+  <div class="katman ust-gradyan"></div>
+  <div class="katman alt-gradyan"></div>
+  <div class="dikis"></div>
+
+  <div class="logo"></div>
+
+  <div class="cam kart">
+    <div class="baslik">Çalışma Saatleri</div>
+    <div class="buyuk-saat">10<span class="iki-nokta">:</span>00<span class="tire"></span>19<span class="iki-nokta">:</span>00</div>
+    <div class="not"><i></i>HAFTANIN HER GÜNÜ AÇIĞIZ</div>
+  </div>
+
+  <div class="gunler-yazi">PAZARTESİ – PAZAR</div>
+</div>
+</body>
+</html>

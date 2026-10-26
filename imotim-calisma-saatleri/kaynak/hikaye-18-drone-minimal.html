@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<link rel="stylesheet" href="cam.css">
+<style>
+  /* Fotoğraf öne çıksın diye karartma en düşük seviyede */
+  .ust-gradyan {
+    background: linear-gradient(180deg,
+      rgba(8, 34, 70, .45) 0%,
+      rgba(8, 34, 70, .18) 16%,
+      rgba(8, 34, 70, 0) 26%);
+  }
+  .alt-gradyan {
+    background: linear-gradient(0deg,
+      rgba(6, 12, 8, .45) 0%,
+      rgba(6, 12, 8, .18) 20%,
+      rgba(6, 12, 8, 0) 32%);
+  }
+  .logo { position: absolute; top: 200px; left: 50%; width: 400px; transform: translateX(-50%); }
+  .bar {
+    position: absolute; top: 1466px; left: 70px; width: 940px; height: 176px;
+    padding: 0 48px;
+    display: flex; align-items: center;
+    border-radius: 44px;
+    background: rgba(16, 16, 16, .40);
+  }
+  .bar .logo-ikon { width: 96px; }
+  .bar .ayrac { width: 1.5px; height: 92px; margin: 0 40px; background: rgba(255, 255, 255, .3); }
+  .bar .orta .ne { font-size: 20px; font-weight: 600; letter-spacing: .36em; color: var(--krem); }
+  .bar .orta .buyuk-saat { margin-top: 12px; justify-content: flex-start; font-size: 66px; }
+  .bar .sag {
+    margin-left: auto;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    font-size: 20px; font-weight: 600; letter-spacing: .3em; padding-left: .3em;
+  }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-1-tam.png" width="1080" height="1920" alt="">
+  <div class="katman ust-gradyan"></div>
+  <div class="katman alt-gradyan"></div>
+
+  <div class="logo"></div>
+
+  <div class="cam bar">
+    <div class="logo-ikon"></div>
+    <div class="ayrac"></div>
+    <div class="orta">
+      <div class="ne">ÇALIŞMA SAATLERİ</div>
+      <div class="buyuk-saat">10<span class="iki-nokta">:</span>00<span class="tire"></span>19<span class="iki-nokta">:</span>00</div>
+    </div>
+    <div class="sag"><i class="acik"></i>HER GÜN</div>
+  </div>
+</div>
+</body>
+</html>

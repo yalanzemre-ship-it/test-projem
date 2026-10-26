@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<link rel="stylesheet" href="cam.css">
+<style>
+  .arka { filter: blur(40px) brightness(.55) saturate(1.1); transform: scale(1.12); }
+  .ust {
+    position: absolute; top: 200px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .logo { width: 430px; }
+  .baslik { margin-top: 40px; font-size: 88px; }
+  .ust .not { margin-top: 20px; font-size: 24px; }
+  /* Tam genişlik panorama şeridi: gökyüzü kırpılmış, dağlar + bina */
+  .serit {
+    position: absolute; top: 590px; left: 0; width: 1080px; height: 480px; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .4);
+  }
+  .serit .foto { top: -720px; }
+  .serit::before, .serit::after {
+    content: ""; position: absolute; left: 0; right: 0; height: 3px; background: rgba(239, 230, 214, .85); z-index: 1;
+  }
+  .serit::before { top: 0; }
+  .serit::after { bottom: 0; }
+  .kart {
+    position: absolute; top: 1110px; left: 90px; width: 900px;
+    padding: 18px 52px;
+  }
+  .gun { height: 64px; font-size: 32px; }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto arka" src="assets/foto-1-tam.png" width="1080" height="1920" alt="">
+
+  <div class="ust">
+    <div class="logo"></div>
+    <div class="baslik">Çalışma Saatleri</div>
+    <div class="not"><i></i>HAFTANIN HER GÜNÜ AÇIĞIZ</div>
+  </div>
+
+  <div class="serit"><img class="foto" src="assets/foto-1-tam.png" width="1080" height="1920" alt=""></div>
+
+  <div class="cam kart">
+    <div class="gun"><span class="ad">Pazartesi</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Salı</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Çarşamba</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Perşembe</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Cuma</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Cumartesi</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Pazar</span><span class="saat">10:00<b>–</b>19:00</span></div>
+  </div>
+</div>
+</body>
+</html>
