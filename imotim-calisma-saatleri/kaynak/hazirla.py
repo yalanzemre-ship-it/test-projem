@@ -6,7 +6,8 @@ PNG olarak kaydedilir. Sayfalar deviceScaleFactor 1 ile render edildiği
 için bu görseller ekrana 1:1 piksel olarak basılır.
 
 Kullanım:
-    python3 hazirla.py <logo.pdf> <foto-1> <foto-2> <foto-3>
+    python3 hazirla.py [<logo.pdf> <foto-1> <foto-2> <foto-3>]
+Argüman verilmezse orijinal/ klasöründeki kaynaklar kullanılır.
 """
 
 import subprocess
@@ -37,7 +38,11 @@ def kirp_olcekle(src: Image.Image, kutu, boyut, ad: str) -> None:
 
 
 def main() -> None:
-    pdf, f1, f2, f3 = (Path(a) for a in sys.argv[1:5])
+    if len(sys.argv) == 5:
+        pdf, f1, f2, f3 = (Path(a) for a in sys.argv[1:5])
+    else:
+        o = Path(__file__).resolve().parent / "orijinal"
+        pdf, f1, f2, f3 = o / "logo.pdf", o / "dis-gunbatimi.webp", o / "dis-yaz.webp", o / "ic-koridor.webp"
     ASSETS.mkdir(exist_ok=True)
     logo_cikar(pdf)
 
