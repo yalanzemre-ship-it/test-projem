@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<link rel="stylesheet" href="cam.css">
+<style>
+  .ust-gradyan {
+    background: linear-gradient(180deg,
+      rgba(4, 30, 80, .30) 0%,
+      rgba(4, 30, 80, .12) 28%,
+      rgba(4, 30, 80, 0) 44%);
+  }
+  .ust {
+    position: absolute; top: 205px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .logo { width: 430px; }
+  .baslik { margin-top: 50px; text-shadow: 0 4px 24px rgba(0, 20, 60, .3); }
+  .alt-baslik { margin-top: 18px; color: #fff; }
+  .hap {
+    margin-top: 52px;
+    padding: 18px 34px 18px 30px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .20);
+    border: 1.5px solid rgba(255, 255, 255, .55);
+    backdrop-filter: blur(14px);
+    font-size: 24px;
+  }
+  /* Açık renk cam: koyu yazı, bordo ayrıntılar */
+  .kart {
+    position: absolute; top: 1130px; left: 80px; width: 920px;
+    padding: 14px 0;
+    background: rgba(250, 246, 239, .84);
+    border: 1.5px solid rgba(255, 255, 255, .8);
+    backdrop-filter: blur(24px) saturate(1.2);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .28);
+    color: var(--antrasit);
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .hucre {
+    height: 116px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+    border-bottom: 1.5px solid rgba(138, 27, 43, .14);
+  }
+  .hucre:nth-child(odd) { border-right: 1.5px solid rgba(138, 27, 43, .14); }
+  .hucre:last-child { grid-column: 1 / -1; border: 0; border-right: 0; }
+  .hucre .ad {
+    font-size: 22px; font-weight: 700; letter-spacing: .3em; padding-left: .3em;
+    color: var(--bordo);
+  }
+  .hucre .saat {
+    font-size: 38px; font-weight: 600; letter-spacing: .01em;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  .hucre .saat b { font-weight: 300; margin: 0 .3em; color: var(--bordo); }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-2-tam.png" width="1080" height="1920" alt="">
+  <div class="katman ust-gradyan"></div>
+
+  <div class="ust">
+    <div class="logo"></div>
+    <div class="baslik">Çalışma Saatleri</div>
+    <div class="alt-baslik">HAFTALIK PROGRAM</div>
+    <div class="hap not"><i></i>HER GÜN AÇIĞIZ</div>
+  </div>
+
+  <div class="cam kart">
+    <div class="hucre"><span class="ad">PAZARTESİ</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">SALI</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">ÇARŞAMBA</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">PERŞEMBE</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">CUMA</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">CUMARTESİ</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="hucre"><span class="ad">PAZAR</span><span class="saat">10:00<b>–</b>19:00</span></div>
+  </div>
+</div>
+</body>
+</html>

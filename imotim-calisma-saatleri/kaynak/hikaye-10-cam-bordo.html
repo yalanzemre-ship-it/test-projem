@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<link rel="stylesheet" href="cam.css">
+<style>
+  .karartma {
+    background: linear-gradient(180deg,
+      rgba(20, 8, 10, .72) 0%,
+      rgba(20, 8, 10, .36) 20%,
+      rgba(20, 8, 10, .28) 55%,
+      rgba(20, 8, 10, .64) 100%);
+  }
+  .ust {
+    position: absolute; top: 210px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .logo { width: 430px; }
+  .baslik { margin-top: 58px; }
+  .alt-baslik { margin-top: 18px; }
+  .kart {
+    margin-top: 48px; width: 860px;
+    padding: 18px 54px 22px;
+    background: rgba(118, 20, 36, .50);
+    border-color: rgba(255, 214, 214, .32);
+  }
+  .kart .ust-satir {
+    display: flex; justify-content: space-between;
+    height: 64px; align-items: center;
+    border-bottom: 1.5px solid rgba(255, 255, 255, .22);
+    font-size: 20px; font-weight: 600; letter-spacing: .36em;
+    color: rgba(255, 255, 255, .7);
+  }
+  .gun { height: 104px; }
+  .gun .ad { display: flex; align-items: center; gap: 22px; }
+  .gun .ad em {
+    font-style: normal; font-size: 20px; font-weight: 700; letter-spacing: .04em;
+    width: 54px; height: 54px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: rgba(239, 230, 214, .16); color: var(--krem);
+    border: 1.5px solid rgba(239, 230, 214, .4);
+  }
+  .ust .not { margin-top: 44px; }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-3-tam.png" width="1080" height="1920" alt="">
+  <div class="katman karartma"></div>
+
+  <div class="ust">
+    <div class="logo"></div>
+    <div class="baslik">Çalışma Saatleri</div>
+    <div class="alt-baslik">HAFTALIK PROGRAM</div>
+
+    <div class="cam kart">
+      <div class="ust-satir"><span>GÜN</span><span>SAAT</span></div>
+      <div class="gun"><span class="ad"><em>01</em>Pazartesi</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad"><em>02</em>Salı</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad"><em>03</em>Çarşamba</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad"><em>04</em>Perşembe</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad"><em>05</em>Cuma</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad"><em>06</em>Cumartesi</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad"><em>07</em>Pazar</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    </div>
+
+    <div class="not"><i></i>HAFTANIN HER GÜNÜ AÇIĞIZ</div>
+  </div>
+</div>
+</body>
+</html>

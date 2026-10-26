@@ -54,6 +54,8 @@ def main() -> None:
     gen = round(1080 / olcek)
     sol = 830 - gen // 2
     kirp_olcekle(ic_koridor, (sol, 0, sol + gen, 2000), (W, H), "foto-3-tam.png")
+    # Sol panelli tasarım için: koridor ve sağdaki mağazalar panelin dışında kalsın
+    kirp_olcekle(ic_koridor, (0, 0, gen, 2000), (W, H), "foto-3-sol.png")
 
     # Kemer çerçeve (800x880): gökyüzü, dağlar, bina ve otopark
     kirp_olcekle(dis_gunbatimi, (0, 410, 1125, 410 + 1238), (800, 880), "foto-1-kemer.png")

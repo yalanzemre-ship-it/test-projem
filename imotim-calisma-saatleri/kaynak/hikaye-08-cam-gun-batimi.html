@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<link rel="stylesheet" href="cam.css">
+<style>
+  .ust-gradyan {
+    background: linear-gradient(180deg,
+      rgba(8, 34, 70, .58) 0%,
+      rgba(8, 34, 70, .34) 20%,
+      rgba(8, 34, 70, .10) 32%,
+      rgba(8, 34, 70, 0) 40%);
+  }
+  .alt-gradyan {
+    background: linear-gradient(0deg,
+      rgba(10, 12, 10, .55) 0%,
+      rgba(10, 12, 10, .25) 30%,
+      rgba(10, 12, 10, 0) 42%);
+  }
+  .ust {
+    position: absolute; top: 205px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .logo { width: 430px; }
+  .baslik { margin-top: 46px; }
+  .ust .not { margin-top: 24px; font-size: 24px; text-shadow: 0 2px 12px rgba(0, 0, 0, .35); }
+  .kart {
+    position: absolute; top: 1160px; left: 90px; width: 900px;
+    padding: 20px 52px;
+    background: rgba(18, 16, 15, .46);
+  }
+  .gun { height: 62px; font-size: 32px; }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-1-tam.png" width="1080" height="1920" alt="">
+  <div class="katman ust-gradyan"></div>
+  <div class="katman alt-gradyan"></div>
+
+  <div class="ust">
+    <div class="logo"></div>
+    <div class="baslik">Çalışma Saatleri</div>
+    <div class="not"><i></i>HAFTANIN HER GÜNÜ AÇIĞIZ</div>
+  </div>
+
+  <div class="cam kart">
+    <div class="gun"><span class="ad">Pazartesi</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Salı</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Çarşamba</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Perşembe</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Cuma</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Cumartesi</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    <div class="gun"><span class="ad">Pazar</span><span class="saat">10:00<b>–</b>19:00</span></div>
+  </div>
+</div>
+</body>
+</html>

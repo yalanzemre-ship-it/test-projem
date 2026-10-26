@@ -1,0 +1,64 @@
+/* Cam (buzlu kart) serisinin ortak öğeleri; hikaye-03-haftalik-cam tasarımından türetildi. */
+
+.cam {
+  border-radius: 36px;
+  background: rgba(24, 19, 16, .42);
+  border: 1.5px solid rgba(255, 255, 255, .28);
+  backdrop-filter: blur(26px) saturate(1.15);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .35);
+}
+
+.baslik {
+  font-family: "Cormorant", serif; font-style: italic; font-weight: 500;
+  font-size: 92px; line-height: 1;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, .35);
+}
+.alt-baslik {
+  font-size: 24px; font-weight: 600; letter-spacing: .42em; padding-left: .42em;
+  color: var(--krem);
+}
+
+.gun {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 112px;
+  border-bottom: 1.5px solid rgba(255, 255, 255, .16);
+  font-size: 38px;
+}
+.gun:last-child { border-bottom: 0; }
+.gun .ad { font-weight: 600; }
+.gun .saat {
+  font-weight: 500; letter-spacing: .02em;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--krem);
+}
+.gun .saat b { font-weight: 300; margin: 0 .35em; opacity: .7; }
+
+.not {
+  display: flex; align-items: center; gap: 18px;
+  font-size: 26px; font-weight: 600; letter-spacing: .3em; padding-left: .3em;
+}
+.not i, i.acik {
+  flex: none;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #5ee08a; box-shadow: 0 0 0 6px rgba(94, 224, 138, .25);
+}
+
+/* Büyük saat satırı: 10:00 — 19:00 */
+.buyuk-saat {
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; line-height: 1; letter-spacing: -.01em;
+  font-variant-numeric: proportional-nums lining-nums;
+}
+.buyuk-saat .tire { width: .32em; height: .06em; margin: 0 .22em; background: var(--krem); opacity: .85; }
+
+/* Haftanın 7 günü kutucukları */
+.gunler { display: flex; justify-content: space-between; }
+.gunler span {
+  width: 88px; height: 100px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+  border-radius: 22px;
+  border: 1.5px solid rgba(255, 255, 255, .26);
+  background: rgba(255, 255, 255, .07);
+  font-size: 24px; font-weight: 600; letter-spacing: .02em;
+}
+.gunler span i.acik { width: 10px; height: 10px; box-shadow: 0 0 0 4px rgba(94, 224, 138, .25); }

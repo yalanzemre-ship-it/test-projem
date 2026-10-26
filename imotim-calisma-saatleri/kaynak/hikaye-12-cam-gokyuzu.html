@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<link rel="stylesheet" href="cam.css">
+<style>
+  .ust-gradyan {
+    background: linear-gradient(180deg,
+      rgba(4, 30, 80, .30) 0%,
+      rgba(4, 30, 80, .10) 30%,
+      rgba(4, 30, 80, 0) 44%);
+  }
+  .alt-gradyan {
+    background: linear-gradient(0deg,
+      rgba(5, 14, 8, .72) 0%,
+      rgba(5, 14, 8, .40) 16%,
+      rgba(5, 14, 8, 0) 30%);
+  }
+  .logo { position: absolute; top: 190px; left: 50%; width: 400px; transform: translateX(-50%); }
+  .kart {
+    position: absolute; top: 382px; left: 90px; width: 900px;
+    padding: 40px 56px 44px;
+    display: flex; flex-direction: column; align-items: center;
+    background: rgba(8, 26, 56, .30);
+    border-color: rgba(255, 255, 255, .42);
+  }
+  .kart .baslik { font-size: 76px; }
+  .kart .buyuk-saat { margin-top: 24px; font-size: 110px; }
+  .kart .cizgi { width: 100%; margin: 32px 0 30px; height: 1.5px; background: rgba(255, 255, 255, .22); }
+  .kart .gunler { width: 100%; }
+  .gunler span { background: rgba(255, 255, 255, .10); border-color: rgba(255, 255, 255, .34); }
+  .alt {
+    position: absolute; left: 0; right: 0; bottom: 290px;
+    display: flex; justify-content: center;
+  }
+  .alt .not { text-shadow: 0 2px 12px rgba(0, 0, 0, .4); }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-2-tam.png" width="1080" height="1920" alt="">
+  <div class="katman ust-gradyan"></div>
+  <div class="katman alt-gradyan"></div>
+
+  <div class="logo"></div>
+
+  <div class="cam kart">
+    <div class="baslik">Çalışma Saatleri</div>
+    <div class="buyuk-saat">10<span class="iki-nokta">:</span>00<span class="tire"></span>19<span class="iki-nokta">:</span>00</div>
+    <div class="cizgi"></div>
+    <div class="gunler">
+      <span>Pzt<i class="acik"></i></span>
+      <span>Sal<i class="acik"></i></span>
+      <span>Çar<i class="acik"></i></span>
+      <span>Per<i class="acik"></i></span>
+      <span>Cum<i class="acik"></i></span>
+      <span>Cmt<i class="acik"></i></span>
+      <span>Paz<i class="acik"></i></span>
+    </div>
+  </div>
+
+  <div class="alt"><div class="not"><i></i>HAFTANIN HER GÜNÜ AÇIĞIZ</div></div>
+</div>
+</body>
+</html>

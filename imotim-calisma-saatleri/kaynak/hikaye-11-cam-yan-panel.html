@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<link rel="stylesheet" href="cam.css">
+<style>
+  .karartma {
+    background: linear-gradient(180deg,
+      rgba(14, 11, 9, .45) 0%,
+      rgba(14, 11, 9, .12) 22%,
+      rgba(14, 11, 9, .10) 70%,
+      rgba(14, 11, 9, .45) 100%);
+  }
+  .panel {
+    position: absolute; top: 180px; left: 48px; width: 610px; height: 1490px;
+    padding: 62px 58px;
+    display: flex; flex-direction: column;
+    background: rgba(22, 18, 15, .48);
+  }
+  .logo { width: 380px; }
+  .baslik { margin-top: 64px; font-size: 104px; line-height: .92; }
+  .alt-baslik { margin-top: 28px; padding-left: 0; }
+  .liste { margin-top: 40px; }
+  .gun { height: 104px; font-size: 31px; }
+  .gun .saat b { margin: 0 .25em; }
+  .not { margin-top: auto; padding-left: 0; font-size: 24px; letter-spacing: .26em; }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-3-sol.png" width="1080" height="1920" alt="">
+  <div class="katman karartma"></div>
+
+  <div class="cam panel">
+    <div class="logo"></div>
+    <div class="baslik">Çalışma<br>Saatleri</div>
+    <div class="alt-baslik">HAFTALIK PROGRAM</div>
+    <div class="liste">
+      <div class="gun"><span class="ad">Pazartesi</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Salı</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Çarşamba</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Perşembe</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Cuma</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Cumartesi</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Pazar</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    </div>
+    <div class="not"><i></i>HER GÜN AÇIĞIZ</div>
+  </div>
+</div>
+</body>
+</html>
