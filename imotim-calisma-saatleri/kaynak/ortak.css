@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-VF.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cormorant";
+  src: url("fonts/CormorantGaramond-Italic-VF.ttf") format("truetype");
+  font-weight: 300 700;
+  font-style: italic;
+}
+
+:root {
+  /* Bina tabelasından alınan marka tonları */
+  --bordo: #8a1b2b;
+  --bordo-koyu: #5c111c;
+  --krem: #efe6d6;
+  --krem-koyu: #d9c9ae;
+  --antrasit: #171513;
+  --sampanya: #d9c39b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+
+.story {
+  position: relative;
+  width: 1080px;
+  height: 1920px;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-variant-numeric: tabular-nums lining-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fotoğraflar assets içinde hedef boyuta hazır; burada ölçeklenmez. */
+.foto { position: absolute; left: 0; top: 0; display: block; }
+
+.katman { position: absolute; inset: 0; }
+
+/* Logo, alfa maskesi olarak kullanılır; rengi background ile verilir. */
+.logo, .logo-ikon {
+  display: block;
+  background: #fff;
+  -webkit-mask: url("assets/logo.png") center / contain no-repeat;
+  mask: url("assets/logo.png") center / contain no-repeat;
+  aspect-ratio: 2172 / 806;
+}
+.logo-ikon {
+  -webkit-mask-image: url("assets/logo-ikon.png");
+  mask-image: url("assets/logo-ikon.png");
+  aspect-ratio: 998 / 806;
+}
+
+/* Montserrat'ta iki nokta küçük harf yüksekliğinde; rakamların ortasına hizalanır. */
+.iki-nokta { position: relative; top: -0.07em; }

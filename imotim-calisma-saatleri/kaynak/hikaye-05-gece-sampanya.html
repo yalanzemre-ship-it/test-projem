@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<style>
+  .story { background: var(--antrasit); }
+  .solma {
+    background:
+      linear-gradient(180deg,
+        rgba(23, 21, 19, .88) 0%,
+        rgba(23, 21, 19, .72) 14%,
+        rgba(23, 21, 19, .30) 24%,
+        rgba(23, 21, 19, 0) 34%),
+      linear-gradient(0deg,
+        var(--antrasit) 30%,
+        rgba(23, 21, 19, .85) 38%,
+        rgba(23, 21, 19, .35) 48%,
+        rgba(23, 21, 19, 0) 58%);
+  }
+  .altin { background: linear-gradient(100deg, #b8925a 0%, #ecdab4 45%, #c9a46a 70%, #e6d0a4 100%); }
+  .logo { position: absolute; top: 210px; left: 50%; width: 440px; transform: translateX(-50%); }
+  .blok {
+    position: absolute; top: 1190px; left: 90px; right: 90px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .serit {
+    display: flex; align-items: center; gap: 28px; width: 100%;
+    font-size: 26px; font-weight: 600; letter-spacing: .42em; padding-left: .42em;
+    color: var(--sampanya); white-space: nowrap;
+  }
+  .serit::before, .serit::after { content: ""; flex: 1; height: 1.5px; background: rgba(217, 195, 155, .55); }
+  .saatler {
+    margin-top: 54px; width: 100%;
+    display: grid; grid-template-columns: 1fr 2px 1fr; align-items: center;
+  }
+  .saatler .ayrac { height: 190px; background: linear-gradient(180deg, transparent, var(--sampanya), transparent); }
+  .kutu { display: flex; flex-direction: column; align-items: center; }
+  .kutu .ne {
+    font-size: 24px; font-weight: 500; letter-spacing: .38em; padding-left: .38em;
+    color: rgba(255, 255, 255, .72);
+  }
+  .kutu .rakam {
+    margin-top: 16px;
+    font-size: 132px; font-weight: 300; line-height: 1; letter-spacing: -.02em;
+    font-variant-numeric: proportional-nums lining-nums;
+    color: transparent; -webkit-background-clip: text; background-clip: text;
+  }
+  .italik {
+    margin-top: 58px;
+    font-family: "Cormorant", serif; font-style: italic; font-weight: 500;
+    font-size: 58px; line-height: 1; color: #f3ead9;
+  }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-3-ust.png" width="1080" height="1350" alt="">
+  <div class="katman solma"></div>
+
+  <div class="logo altin"></div>
+
+  <div class="blok">
+    <div class="serit">HAFTANIN HER GÜNÜ</div>
+    <div class="saatler">
+      <div class="kutu"><span class="ne">AÇILIŞ</span><span class="rakam altin">10<span class="iki-nokta">:</span>00</span></div>
+      <div class="ayrac"></div>
+      <div class="kutu"><span class="ne">KAPANIŞ</span><span class="rakam altin">19<span class="iki-nokta">:</span>00</span></div>
+    </div>
+    <div class="italik">Sizleri bekliyoruz</div>
+  </div>
+</div>
+</body>
+</html>

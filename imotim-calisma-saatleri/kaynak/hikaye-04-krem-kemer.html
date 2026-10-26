@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<style>
+  .story {
+    background:
+      radial-gradient(120% 70% at 50% 40%, #f6efe3 0%, var(--krem) 55%, #e6dac4 100%);
+    color: var(--antrasit);
+  }
+  .logo { position: absolute; top: 205px; left: 50%; width: 440px; transform: translateX(-50%); background: #111; }
+  .kemer-cerceve {
+    position: absolute; top: 452px; left: 140px;
+    width: 800px; height: 880px;
+  }
+  /* Fotoğrafın arkasında kaydırılmış ince bordo kemer çizgisi */
+  .kemer-cerceve::before {
+    content: ""; position: absolute; inset: -22px;
+    border: 2px solid var(--bordo);
+    border-radius: 422px 422px 0 0;
+    border-bottom: 0;
+  }
+  .kemer {
+    position: absolute; inset: 0;
+    border-radius: 400px 400px 0 0;
+    overflow: hidden;
+    box-shadow: 0 28px 60px rgba(60, 40, 20, .18);
+  }
+  .kemer img { display: block; }
+  .yazi {
+    position: absolute; top: 1366px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .yazi .italik {
+    font-family: "Cormorant", serif; font-style: italic; font-weight: 500;
+    font-size: 66px; line-height: 1; color: var(--bordo);
+  }
+  .yazi .saat {
+    margin-top: 14px;
+    display: flex; align-items: center;
+    font-size: 116px; font-weight: 700; line-height: 1; letter-spacing: -.01em;
+    font-variant-numeric: proportional-nums lining-nums;
+  }
+  .yazi .saat .tire { width: .34em; height: .06em; margin: 0 .22em; background: var(--bordo); }
+  .yazi .gunler {
+    margin-top: 26px;
+    display: flex; align-items: center; gap: 22px;
+    font-size: 24px; font-weight: 600; letter-spacing: .4em; padding-left: .4em;
+    color: #5a5047;
+  }
+  .yazi .gunler i { width: 8px; height: 8px; border-radius: 50%; background: var(--bordo); }
+</style>
+</head>
+<body>
+<div class="story">
+  <div class="logo"></div>
+
+  <div class="kemer-cerceve">
+    <div class="kemer"><img src="assets/foto-1-kemer.png" width="800" height="880" alt=""></div>
+  </div>
+
+  <div class="yazi">
+    <div class="italik">Haftanın her günü</div>
+    <div class="saat">10<span class="iki-nokta">:</span>00<span class="tire"></span>19<span class="iki-nokta">:</span>00</div>
+    <div class="gunler">PAZARTESİ<i></i>PAZAR</div>
+  </div>
+</div>
+</body>
+</html>

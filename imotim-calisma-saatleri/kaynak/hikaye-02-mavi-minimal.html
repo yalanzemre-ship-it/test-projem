@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<style>
+  .ust-gradyan {
+    background: linear-gradient(180deg,
+      rgba(4, 30, 80, .28) 0%,
+      rgba(4, 30, 80, .12) 30%,
+      rgba(4, 30, 80, 0) 46%);
+  }
+  .alt-gradyan {
+    background: linear-gradient(0deg,
+      rgba(5, 14, 8, .78) 0%,
+      rgba(5, 14, 8, .45) 16%,
+      rgba(5, 14, 8, 0) 30%);
+  }
+  .icerik { position: absolute; top: 200px; left: 92px; right: 92px; }
+  .logo { width: 400px; }
+  .etiket {
+    margin-top: 70px;
+    display: flex; align-items: center; gap: 26px;
+    font-size: 28px; font-weight: 600; letter-spacing: .36em;
+  }
+  .etiket::after { content: ""; flex: 1; height: 2px; background: rgba(255, 255, 255, .7); }
+  .satir {
+    display: flex; align-items: flex-end; gap: 34px;
+    font-variant-numeric: proportional-nums lining-nums;
+  }
+  .satir .rakam { font-size: 200px; line-height: .86; letter-spacing: -.035em; }
+  .satir .ne {
+    padding-bottom: 18px;
+    font-size: 24px; font-weight: 600; letter-spacing: .3em;
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    opacity: .9;
+  }
+  .acilis { margin-top: 26px; }
+  .acilis .rakam { font-weight: 800; }
+  .kapanis { margin-top: 20px; }
+  .kapanis .rakam { font-weight: 200; }
+  .alt {
+    position: absolute; left: 92px; right: 92px; bottom: 285px;
+    display: flex; align-items: flex-end; justify-content: space-between;
+  }
+  .alt .gunler { font-size: 30px; font-weight: 700; letter-spacing: .28em; }
+  .alt .gunler small {
+    display: block; margin-top: 14px;
+    font-size: 26px; font-weight: 500; letter-spacing: .04em; opacity: .85;
+  }
+  .alt .logo-ikon { width: 92px; opacity: .95; }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-2-tam.png" width="1080" height="1920" alt="">
+  <div class="katman ust-gradyan"></div>
+  <div class="katman alt-gradyan"></div>
+
+  <div class="icerik">
+    <div class="logo"></div>
+    <div class="etiket">HER GÜN AÇIĞIZ</div>
+    <div class="satir acilis">
+      <span class="rakam">10<span class="iki-nokta">:</span>00</span>
+      <span class="ne">AÇILIŞ</span>
+    </div>
+    <div class="satir kapanis">
+      <span class="rakam">19<span class="iki-nokta">:</span>00</span>
+      <span class="ne">KAPANIŞ</span>
+    </div>
+  </div>
+
+  <div class="alt">
+    <div class="gunler">PAZARTESİ – PAZAR<small>Haftanın 7 günü</small></div>
+    <div class="logo-ikon"></div>
+  </div>
+</div>
+</body>
+</html>

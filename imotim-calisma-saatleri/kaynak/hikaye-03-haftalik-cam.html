@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<style>
+  .karartma {
+    background: linear-gradient(180deg,
+      rgba(14, 11, 9, .70) 0%,
+      rgba(14, 11, 9, .38) 20%,
+      rgba(14, 11, 9, .30) 55%,
+      rgba(14, 11, 9, .62) 100%);
+  }
+  .icerik {
+    position: absolute; top: 210px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .logo { width: 430px; }
+  .baslik {
+    margin-top: 58px;
+    font-family: "Cormorant", serif; font-style: italic; font-weight: 500;
+    font-size: 92px; line-height: 1;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, .35);
+  }
+  .alt-baslik {
+    margin-top: 18px;
+    font-size: 24px; font-weight: 600; letter-spacing: .42em; padding-left: .42em;
+    color: var(--krem);
+  }
+  .kart {
+    margin-top: 48px;
+    width: 860px;
+    padding: 22px 54px;
+    border-radius: 36px;
+    background: rgba(24, 19, 16, .42);
+    border: 1.5px solid rgba(255, 255, 255, .28);
+    backdrop-filter: blur(26px) saturate(1.15);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .35);
+  }
+  .gun {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 112px;
+    border-bottom: 1.5px solid rgba(255, 255, 255, .16);
+    font-size: 38px;
+  }
+  .gun:last-child { border-bottom: 0; }
+  .gun .ad { font-weight: 600; }
+  .gun .saat {
+    font-weight: 500; letter-spacing: .02em;
+    font-variant-numeric: tabular-nums lining-nums;
+    color: var(--krem);
+  }
+  .gun .saat b { font-weight: 300; margin: 0 .35em; opacity: .7; }
+  .not {
+    margin-top: 48px;
+    display: flex; align-items: center; gap: 18px;
+    font-size: 26px; font-weight: 600; letter-spacing: .3em; padding-left: .3em;
+  }
+  .not i {
+    width: 14px; height: 14px; border-radius: 50%;
+    background: #5ee08a; box-shadow: 0 0 0 6px rgba(94, 224, 138, .25);
+  }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-3-tam.png" width="1080" height="1920" alt="">
+  <div class="katman karartma"></div>
+
+  <div class="icerik">
+    <div class="logo"></div>
+    <div class="baslik">Çalışma Saatleri</div>
+    <div class="alt-baslik">HAFTALIK PROGRAM</div>
+
+    <div class="kart">
+      <div class="gun"><span class="ad">Pazartesi</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Salı</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Çarşamba</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Perşembe</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Cuma</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Cumartesi</span><span class="saat">10:00<b>–</b>19:00</span></div>
+      <div class="gun"><span class="ad">Pazar</span><span class="saat">10:00<b>–</b>19:00</span></div>
+    </div>
+
+    <div class="not"><i></i>HAFTANIN HER GÜNÜ AÇIĞIZ</div>
+  </div>
+</div>
+</body>
+</html>

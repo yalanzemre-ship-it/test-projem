@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<style>
+  .story {
+    background:
+      radial-gradient(90% 55% at 15% 12%, #a3243a 0%, var(--bordo) 45%, var(--bordo-koyu) 100%);
+  }
+  /* Fotoğraf: 1080x1920 asset aşağı kaydırılıp çapraz kenarla kırpılır (ölçeklenmez). */
+  .foto { top: 280px; clip-path: polygon(0 760px, 100% 640px, 100% 100%, 0 100%); }
+  .alt-gradyan {
+    background: linear-gradient(0deg,
+      rgba(6, 14, 8, .78) 0%,
+      rgba(6, 14, 8, .40) 14%,
+      rgba(6, 14, 8, 0) 26%);
+  }
+  .logo { position: absolute; top: 210px; left: 90px; width: 400px; }
+  .baslik { position: absolute; top: 452px; left: 90px; right: 90px; }
+  .baslik .ince {
+    font-size: 46px; font-weight: 500; letter-spacing: .34em;
+    color: var(--krem);
+  }
+  .baslik .kalin {
+    margin-top: 8px;
+    font-size: 146px; font-weight: 900; line-height: .95; letter-spacing: -.02em;
+  }
+  .etiket {
+    position: absolute; top: 742px; left: 78px;
+    padding: 20px 40px 22px;
+    display: flex; align-items: center;
+    background: var(--krem); color: var(--bordo);
+    font-size: 92px; font-weight: 800; line-height: 1; letter-spacing: -.01em;
+    font-variant-numeric: proportional-nums lining-nums;
+    transform: rotate(-3.2deg);
+    transform-origin: left center;
+    box-shadow: 0 20px 44px rgba(40, 0, 8, .35);
+  }
+  .etiket .tire { width: .34em; height: .075em; margin: 0 .2em; background: currentColor; }
+  .muhur {
+    position: absolute; left: 790px; top: 760px;
+    width: 230px; height: 230px; border-radius: 50%;
+    background: var(--krem);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .3);
+  }
+  .muhur svg { position: absolute; inset: 0; }
+  .muhur text {
+    font-family: "Montserrat"; font-size: 17px; font-weight: 700; letter-spacing: 3.4px;
+    fill: var(--bordo);
+  }
+  .muhur .logo-ikon {
+    position: absolute; left: 50%; top: 50%; width: 92px;
+    transform: translate(-50%, -50%); background: var(--bordo);
+  }
+  .alt {
+    position: absolute; left: 0; right: 0; bottom: 290px;
+    text-align: center;
+    font-size: 30px; font-weight: 700; letter-spacing: .36em; padding-left: .36em;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, .4);
+  }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-2-tam.png" width="1080" height="1920" alt="">
+  <div class="katman alt-gradyan"></div>
+
+  <div class="logo"></div>
+
+  <div class="baslik">
+    <div class="ince">HAFTANIN</div>
+    <div class="kalin">HER GÜNÜ</div>
+  </div>
+
+  <div class="etiket">10<span class="iki-nokta">:</span>00<span class="tire"></span>19<span class="iki-nokta">:</span>00</div>
+
+  <div class="muhur">
+    <svg viewBox="0 0 230 230" width="230" height="230">
+      <defs><path id="cember" d="M115,115 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
+      <text><textPath href="#cember" textLength="548" lengthAdjust="spacing">7 GÜN AÇIĞIZ • 7 GÜN AÇIĞIZ •</textPath></text>
+    </svg>
+    <div class="logo-ikon"></div>
+  </div>
+
+  <div class="alt">PAZARTESİ – PAZAR</div>
+</div>
+</body>
+</html>

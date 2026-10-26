@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ortak.css">
+<style>
+  .ust-gradyan {
+    background: linear-gradient(180deg,
+      rgba(8, 34, 70, .55) 0%,
+      rgba(8, 34, 70, .32) 22%,
+      rgba(8, 34, 70, .10) 36%,
+      rgba(8, 34, 70, 0) 46%);
+  }
+  .alt-gradyan {
+    background: linear-gradient(0deg,
+      rgba(6, 12, 8, .80) 0%,
+      rgba(6, 12, 8, .58) 17%,
+      rgba(6, 12, 8, .22) 26%,
+      rgba(6, 12, 8, 0) 34%);
+  }
+  .icerik {
+    position: absolute; top: 215px; left: 0; right: 0;
+    display: flex; flex-direction: column; align-items: center;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+  }
+  .logo { width: 480px; filter: drop-shadow(0 4px 18px rgba(0, 0, 0, .25)); }
+  .baslik {
+    margin-top: 76px;
+    font-size: 30px; font-weight: 600; letter-spacing: .42em;
+    padding-left: .42em; /* letter-spacing sağdaki boşluğu dengeler */
+    opacity: .95;
+  }
+  .saat {
+    margin-top: 14px;
+    font-size: 132px; font-weight: 800; line-height: 1;
+    letter-spacing: -.01em;
+    font-variant-numeric: proportional-nums lining-nums;
+    display: flex; align-items: center;
+  }
+  .saat .tire { width: .36em; height: .07em; margin: 0 .2em; background: currentColor; opacity: .9; }
+  .rozet {
+    margin-top: 40px;
+    padding: 18px 42px 18px calc(42px + .32em);
+    font-size: 27px; font-weight: 700; letter-spacing: .32em;
+    border: 2px solid rgba(255, 255, 255, .85);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .14);
+    backdrop-filter: blur(10px);
+    text-shadow: none;
+  }
+  .alt {
+    position: absolute; left: 0; right: 0; bottom: 290px;
+    display: flex; align-items: center; justify-content: center; gap: 30px;
+    font-family: "Cormorant", serif; font-style: italic; font-weight: 500;
+    font-size: 68px; line-height: 1;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, .45);
+  }
+  .alt::before, .alt::after {
+    content: ""; width: 90px; height: 2px; background: rgba(255, 255, 255, .8);
+  }
+</style>
+</head>
+<body>
+<div class="story">
+  <img class="foto" src="assets/foto-1-tam.png" width="1080" height="1920" alt="">
+  <div class="katman ust-gradyan"></div>
+  <div class="katman alt-gradyan"></div>
+
+  <div class="icerik">
+    <div class="logo"></div>
+    <div class="baslik">ÇALIŞMA SAATLERİ</div>
+    <div class="saat">10<span class="iki-nokta">:</span>00<span class="tire"></span>19<span class="iki-nokta">:</span>00</div>
+    <div class="rozet">HAFTANIN HER GÜNÜ</div>
+  </div>
+
+  <div class="alt">Sizleri bekliyoruz</div>
+</div>
+</body>
+</html>
