@@ -376,7 +376,7 @@ async function zipOf(entries, onProgress) {
 }
 const setEntries = id => {
   const dir = setDir(id);
-  return [...Object.keys(SLUG).map(k => [`dl/${dir}/${SLUG[k]}.jpg`, `${dir}/${SLUG[k]}.jpg`]), [`mockup/${dir}.jpg`, `${dir}/profil-onizleme.jpg`]];
+  return [...Object.keys(SLUG).map(k => [`dl/${dir}/${SLUG[k]}.jpg`, `${dir}-${SLUG[k]}.jpg`]), [`mockup/${dir}.jpg`, `${dir}-profil-onizleme.jpg`]];
 };
 function mkBtn(el, label, primary) { el.innerHTML = DL_ICON + label; el.dataset.dl = "1"; return el; }
 
@@ -408,7 +408,7 @@ const dlAll = mkBtn(document.getElementById("dlAll"), "Hepsini ZIP olarak indir"
 const dlAllStatus = document.getElementById("dlAllStatus");
 dlAll.addEventListener("click", () => saveFile("imotim-one-cikan-kapaklar.zip", () => {
   const entries = SETS.flatMap(s => setEntries(s.id)).concat(SSS_VARIANTS.map((v, i) => {
-    const f = `${i + 1}-${v.icon.toLowerCase()}-${v.set}.jpg`; return [`dl/sss-alternatifleri/${f}`, `sss-alternatifleri/${f}`];
+    const f = `${i + 1}-${v.icon.toLowerCase()}-${v.set}.jpg`; return [`dl/sss-alternatifleri/${f}`, `sss-alternatif-${f}`];
   }));
   return zipOf(entries, (n, t) => { dlAllStatus.textContent = `Hazırlanıyor… ${n}/${t}`; });
 }, dlAllStatus, dlAll));
