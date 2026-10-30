@@ -141,7 +141,7 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
   <section class="gallery" id="gallery"></section>
 
   <h2>Setlerin detayı</h2>
-  <p class="sec-intro">Kapaklara tıklayınca hikâye formatında (1080×1920) yükleyeceğin görseli görür, oradan indirebilirsin.</p>
+  <p class="sec-intro">Kapaklara tıklayınca hikâyede ve profilde nasıl duracağını görür, kare kapak dosyasını (1080×1080) oradan indirebilirsin.</p>
 
   <section class="sets" id="sets"></section>
 
@@ -150,7 +150,7 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
   <section class="sss-grid" id="sss"></section>
 
   <div class="files all-dl">
-    <span>Tüm kapaklar (1080×1920 JPG, Instagram'a doğrudan yüklenecek boyutta), SSS alternatifleri ve 16 profil önizlemesi tek dosyada.</span>
+    <span>Tüm kapaklar (1080×1080 kare JPG), SSS alternatifleri ve 16 profil önizlemesi tek dosyada.</span>
     <button class="btn primary" type="button" id="dlAll"></button>
   </div>
   <p class="status" id="dlAllStatus" aria-live="polite"></p>
@@ -478,7 +478,7 @@ document.addEventListener("click", e => {
   document.getElementById("dStory").innerHTML = svg;
   document.getElementById("dBig").innerHTML = toCircle(svg);
   document.getElementById("dTitle").textContent = title;
-  document.getElementById("dNote").textContent = "Solda yükleyeceğin 1080×1920 hikâye görseli, sağda profilde görünecek daire kırpımı.";
+  document.getElementById("dNote").textContent = "Solda hikâyede nasıl duracağı, sağda profildeki daire görünümü. İndir butonu 1080×1080 kare dosyayı verir.";
   dlg.showModal();
 });
 document.getElementById("dClose").addEventListener("click", () => dlg.close());
