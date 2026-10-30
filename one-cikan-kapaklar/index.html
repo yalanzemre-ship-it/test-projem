@@ -1,0 +1,280 @@
+<title>İmotim Öne Çıkan Kapakları</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: Instagram profil şeridini taklit eden set satırları; her set kendi kartında, altında renk paleti ve not. */
+:root {
+  --bg: #f6f5f3;
+  --surface: #ffffff;
+  --fg: #1d1b19;
+  --muted: #6d6862;
+  --line: #e3e0dc;
+  --ring: #d4d1cc;
+  --accent: #c4511f;
+  --display: "Cormorant Garamond", "Times New Roman", serif;
+  --body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141312; --surface: #1d1c1a; --fg: #f1eee9; --muted: #a39d95;
+    --line: #2e2c29; --ring: #45423e; --accent: #e8743c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141312; --surface: #1d1c1a; --fg: #f1eee9; --muted: #a39d95;
+  --line: #2e2c29; --ring: #45423e; --accent: #e8743c; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 72px;
+}
+.wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 28px; }
+header { display: grid; gap: 10px; max-width: 64ch; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(34px, 6vw, 52px); line-height: 1.02; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 30px; margin: 24px 0 0; text-wrap: balance; }
+header p, .sec-intro { margin: 0; color: var(--muted); }
+.sets { display: grid; gap: 16px; }
+.set {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 22px 22px 18px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px 28px; align-items: center;
+}
+.set-head { display: grid; gap: 4px; min-width: 0; }
+.set-name { font-family: var(--display); font-size: 26px; font-weight: 600; line-height: 1.1; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.tag { font-family: var(--body); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.set-note { color: var(--muted); font-size: 14px; max-width: 52ch; }
+.swatches { display: flex; gap: 6px; margin-top: 6px; }
+.swatches i { width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--line); display: block; }
+.row { display: flex; gap: 18px; flex-wrap: wrap; }
+.hl { display: grid; justify-items: center; gap: 7px; background: none; border: 0; padding: 0; cursor: pointer; color: var(--fg); font: inherit; }
+.hl .disc { width: 86px; height: 86px; border-radius: 50%; padding: 3px; border: 1px solid var(--ring); background: var(--surface); transition: transform .18s ease; }
+.hl .disc svg { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.hl span { font-size: 12.5px; font-weight: 600; }
+.hl:hover .disc { transform: scale(1.05); }
+.hl:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 10px; }
+.sss-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.sss-card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 12px 14px; display: grid; justify-items: center; align-content: start; gap: 8px; text-align: center; }
+.sss-card small { color: var(--muted); font-size: 12px; line-height: 1.4; }
+.files { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; color: var(--muted); font-size: 14px; }
+.files code { font-size: 13px; color: var(--fg); }
+dialog { border: 0; border-radius: 16px; padding: 0; background: var(--surface); color: var(--fg); max-width: min(92vw, 640px); width: 100%; }
+dialog::backdrop { background: rgba(0,0,0,.6); }
+.modal { display: grid; grid-template-columns: auto 1fr; gap: 22px; padding: 22px; align-items: center; }
+.story { width: 180px; aspect-ratio: 9/16; border-radius: 12px; overflow: hidden; max-width: 100%; }
+.story svg { width: 100%; height: 100%; display: block; }
+.modal-side { display: grid; gap: 14px; justify-items: start; min-width: 0; }
+.big { width: 150px; height: 150px; border-radius: 50%; padding: 4px; border: 1px solid var(--ring); }
+.big svg { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.modal h3 { margin: 0; font-family: var(--display); font-size: 24px; }
+.modal p { margin: 0; color: var(--muted); font-size: 13px; }
+.close { font: inherit; font-weight: 600; font-size: 13px; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+@media (max-width: 720px) {
+  .set { grid-template-columns: 1fr; }
+  .hl .disc { width: 74px; height: 74px; }
+  .row { gap: 14px; }
+  .modal { grid-template-columns: 1fr; justify-items: center; }
+  .modal-side { justify-items: center; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) { .hl .disc { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">imotim.avm · Öne Çıkanlar</div>
+    <h1>Yeni öne çıkan kapakları</h1>
+    <p>8 farklı renk ve tasarım dili, her birinde Saatlerimiz, Özel Günler ve yeni SSS kapağı. Kapaklara tıklayınca hikâye formatında (1080×1920) nasıl duracağını görürsün.</p>
+  </header>
+
+  <section class="sets" id="sets"></section>
+
+  <h2>SSS kapağı için farklı fikirler</h2>
+  <p class="sec-intro">Aynı başlık, altı farklı yaklaşım. Hangi setle gideceğinize göre buradaki ikonu seçip o setin renklerine uyarlayabiliriz.</p>
+  <section class="sss-grid" id="sss"></section>
+
+  <div class="files">PNG dosyaları (1080×1920, Instagram'a doğrudan yüklenecek boyutta) repo içinde <code>one-cikan-kapaklar/png/</code> klasöründe, set adına göre ayrılmış durumda.</div>
+</div>
+
+<dialog id="dlg">
+  <div class="modal">
+    <div class="story" id="dStory"></div>
+    <div class="modal-side">
+      <div class="big" id="dBig"></div>
+      <h3 id="dTitle"></h3>
+      <p id="dNote"></p>
+      <button class="close" id="dClose" type="button">Kapat</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* ---------- İkonlar: 200×200 kutu, merkez 100,100, yalnızca stroke ---------- */
+const ICONS = {
+  clock: c => `<circle cx="100" cy="100" r="70"/>
+    <path d="M100 38v10M162 100h-10M100 162v-10M38 100h10"/>
+    <path d="M100 100V62M100 100l28 16"/><circle cx="100" cy="100" r="3.5" fill="${c}" stroke="none"/>`,
+  clockArrow: c => `<path d="M154 74A62 62 0 1 0 160 112"/><path d="M140 62l15 12 2-19"/>
+    <path d="M100 100V64M100 100l24 14"/><circle cx="100" cy="100" r="3.5" fill="${c}" stroke="none"/>`,
+  doorSign: c => `<path d="M100 36l-30 28M100 36l30 28"/><circle cx="100" cy="34" r="4" fill="${c}" stroke="none"/>
+    <rect x="46" y="64" width="108" height="92" rx="10"/><circle cx="100" cy="110" r="26"/><path d="M100 110V94M100 110l11 7"/>`,
+  gift: c => `<rect x="48" y="92" width="104" height="66" rx="4"/><rect x="40" y="70" width="120" height="22" rx="4"/>
+    <path d="M100 70v88"/><path d="M100 70C88 46 62 48 66 62c3 10 22 10 34 8zM100 70c12-24 38-22 34-8-3 10-22 10-34 8z"/>`,
+  calStar: c => `<rect x="44" y="54" width="112" height="102" rx="12"/><path d="M44 82h112M74 42v24M126 42v24"/>
+    <path d="M100 98l7 14 15 2-11 10 3 15-14-7-14 7 3-15-11-10 15-2z"/>`,
+  sparkle: c => `<path d="M94 38c4 40 18 54 58 58-40 4-54 18-58 58-4-40-18-54-58-58 40-4 54-18 58-58z"/>
+    <path d="M150 40c1.5 11 5 14.5 16 16-11 1.5-14.5 5-16 16-1.5-11-5-14.5-16-16 11-1.5 14.5-5 16-16z"/>`,
+  bubbleQ: c => `<path d="M62 50h76a16 16 0 0 1 16 16v48a16 16 0 0 1-16 16H98l-28 22v-22h-8a16 16 0 0 1-16-16V66a16 16 0 0 1 16-16z"/>
+    <path d="M88 80c0-8 6-13 12-13 7 0 12 5 12 11 0 7-6 9-10 12-2 2-2 4-2 8"/><circle cx="100" cy="110" r="3.5" fill="${c}" stroke="none"/>`,
+  qMark: c => `<path d="M74 70c0-18 13-30 28-30 16 0 28 11 28 26 0 15-11 21-20 27-6 4-8 8-8 18"/><circle cx="102" cy="146" r="6" fill="${c}" stroke="none"/>`,
+  info: c => `<circle cx="100" cy="100" r="66"/><path d="M100 92v44M90 136h20M92 92h8"/><circle cx="100" cy="68" r="5" fill="${c}" stroke="none"/>`,
+  chats: c => `<path d="M48 48h70a12 12 0 0 1 12 12v34a12 12 0 0 1-12 12H80l-20 16v-16H48a12 12 0 0 1-12-12V60a12 12 0 0 1 12-12z"/>
+    <path d="M142 86h10a12 12 0 0 1 12 12v32a12 12 0 0 1-12 12h-6v16l-20-16H98a12 12 0 0 1-12-12v-12"/>
+    <path d="M70 72c0-5 4-8 8-8s8 3 8 7c0 5-4 6-7 8"/><circle cx="79" cy="92" r="2.5" fill="${c}" stroke="none"/>`,
+  sofaQ: c => `<path d="M50 120V96a14 14 0 0 1 14-14h72a14 14 0 0 1 14 14v24"/><path d="M38 118a12 12 0 0 1 24 0v12h76v-12a12 12 0 0 1 24 0v26H38z"/>
+    <path d="M60 144v14M140 144v14"/><path d="M90 50c0-6 5-10 10-10 6 0 10 4 10 9 0 6-5 7-8 10-2 1-2 3-2 6"/><circle cx="100" cy="74" r="2.5" fill="${c}" stroke="none"/>`
+};
+
+/* ---------- Setler ---------- */
+const LABELS = { saat: "Saatlerimiz", ozel: "Özel Günler", sss: "SSS" };
+const SETS = [
+  { id: "noir", name: "Siyah & Altın", tag: "Önerilen", note: "Logonun siyah-beyaz yapısına en yakın, en premium duran set. Turuncu tamamen gidiyor, marka rengi bağı zayıflar.",
+    swatch: ["#121110", "#c9a96e"], bg: "noir", fg: "#c9a96e", frame: "ring", sw: 4, icons: { saat: "clock", ozel: "gift", sss: "bubbleQ" } },
+  { id: "antrasit", name: "Antrasit & Turuncu Nokta", tag: "Marka bağı korunur", note: "Mevcut turuncuyu sadece küçük bir vurgu olarak tutar; geçiş takipçi tarafında daha az kopukluk yaratır.",
+    swatch: ["#2b2d30", "#ffffff", "#e86a24"], bg: "antrasit", fg: "#ffffff", dot: "#e86a24", frame: "none", sw: 4, icons: { saat: "clockArrow", ozel: "sparkle", sss: "qMark" } },
+  { id: "ceviz", name: "Ceviz Ahşap", note: "Mobilya dünyasıyla doğrudan bağ kurar. Doku küçük daire içinde detay kaybeder, kontrast yüksek tutuldu.",
+    swatch: ["#5b3a25", "#f2e6d3"], bg: "ceviz", fg: "#f4e9d8", frame: "ring", sw: 5, icons: { saat: "clock", ozel: "calStar", sss: "sofaQ" } },
+  { id: "mermer", name: "Beyaz Mermer", note: "Açık, ferah, showroom hissi. Beyaz profil arka planında sınırları silikleşebilir, bu yüzden ince siyah çerçeve var.",
+    swatch: ["#f2f0ec", "#1b1b1b"], bg: "mermer", fg: "#1c1b1a", frame: "ring", sw: 4, label: true, icons: { saat: "clock", ozel: "gift", sss: "bubbleQ" } },
+  { id: "zumrut", name: "Zümrüt & Pirinç", note: "Kemer çerçeve, klasik mobilya ve otel lobisi estetiği. Diğerlerine göre daha iddialı, her içeriğe uymayabilir.",
+    swatch: ["#0f3b2e", "#c8a45c"], bg: "zumrut", fg: "#cfae68", frame: "arch", sw: 4, icons: { saat: "clock", ozel: "sparkle", sss: "qMark" } },
+  { id: "lacivert", name: "Lacivert Tipografi", note: "İkon yerine yazı. Çok şık durur ama küçük dairede ikon kadar hızlı okunmaz.",
+    swatch: ["#14213d", "#e9dcc3"], bg: "lacivert", fg: "#eadcc2", frame: "double", type: true, icons: { saat: "Saat", ozel: "Özel", sss: "SSS" } },
+  { id: "keten", name: "Bej Keten", note: "Sıcak, ev hissi veren nötr ton. Feed'de bej ağırlıklı ürün fotoğrafları varsa çok uyumlu durur.",
+    swatch: ["#e5d9c6", "#d3c1a6", "#4a3527"], bg: "keten", fg: "#4a3527", frame: "disc", disc: "#d6c4a8", sw: 5, icons: { saat: "doorSign", ozel: "gift", sss: "chats" } },
+  { id: "turuncu", name: "Yanık Turuncu", note: "Mevcut rengin rafine hali: parlak degrade yerine mat, koyu turuncu ve ince çizgi. En az değişiklik isteyen seçenek.",
+    swatch: ["#b9481b", "#fff3e8"], bg: "turuncu", fg: "#fff3e8", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } }
+];
+
+const SSS_VARIANTS = [
+  { title: "Konuşma balonu", note: "En anlaşılır, evrensel", set: "noir", icon: "bubbleQ" },
+  { title: "Tek soru işareti", note: "Sade, uzaktan bile okunur", set: "antrasit", icon: "qMark" },
+  { title: "SSS yazısı", note: "İkon yerine tipografi", set: "lacivert", icon: "SSS", type: true },
+  { title: "Bilgi ikonu", note: "Teslimat, montaj, ödeme gibi bilgi içeriği için", set: "turuncu", icon: "info" },
+  { title: "Çift balon", note: "Soru-cevap hissi verir", set: "keten", icon: "chats" },
+  { title: "Koltuk + soru", note: "Mobilyaya özel, akılda kalır", set: "ceviz", icon: "sofaQ" }
+];
+
+/* ---------- Arka planlar (1080×1920) ---------- */
+function background(kind, uid) {
+  const W = 1080, H = 1920;
+  switch (kind) {
+    case "noir": return `<defs><radialGradient id="${uid}g" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#1f1c18"/><stop offset="1" stop-color="#0d0c0b"/></radialGradient></defs><rect width="${W}" height="${H}" fill="url(#${uid}g)"/>`;
+    case "antrasit": return `<rect width="${W}" height="${H}" fill="#2b2d30"/>`;
+    case "lacivert": return `<defs><radialGradient id="${uid}g" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#1b2a4b"/><stop offset="1" stop-color="#101a31"/></radialGradient></defs><rect width="${W}" height="${H}" fill="url(#${uid}g)"/>`;
+    case "zumrut": return `<defs><radialGradient id="${uid}g" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#15503e"/><stop offset="1" stop-color="#0b2c22"/></radialGradient></defs><rect width="${W}" height="${H}" fill="url(#${uid}g)"/>`;
+    case "turuncu": return `<defs><radialGradient id="${uid}g" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#c85a26"/><stop offset="1" stop-color="#9f3c15"/></radialGradient></defs><rect width="${W}" height="${H}" fill="url(#${uid}g)"/>`;
+    case "ceviz": return `<defs><filter id="${uid}w" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.0025 0.06" numOctaves="4" seed="7"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0.16  0 0 0 0 0.09  0 0 0 0 0.05  0 0 0 1.6 -0.55"/></filter>
+        <radialGradient id="${uid}v" cx="50%" cy="50%" r="65%"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></radialGradient></defs>
+        <rect width="${W}" height="${H}" fill="#6a442b"/><rect width="${W}" height="${H}" filter="url(#${uid}w)"/><rect width="${W}" height="${H}" fill="url(#${uid}v)"/>`;
+    case "mermer": return `<defs><filter id="${uid}m" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.0032" numOctaves="5" seed="11"/>
+        <feColorMatrix type="luminanceToAlpha"/>
+        <feComponentTransfer><feFuncA type="table" tableValues="0 0 0 .35 0 0 .18 0 0 0"/></feComponentTransfer>
+        <feColorMatrix type="matrix" values="0 0 0 0 .45  0 0 0 0 .44  0 0 0 0 .42  0 0 0 1 0"/></filter></defs>
+        <rect width="${W}" height="${H}" fill="#f3f1ed"/><rect width="${W}" height="${H}" filter="url(#${uid}m)"/>`;
+    case "keten": return `<defs><filter id="${uid}k" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9 0.35" numOctaves="2" seed="3"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 .35  0 0 0 0 .27  0 0 0 0 .18  0 0 0 .22 0"/></filter></defs>
+        <rect width="${W}" height="${H}" fill="#e6dac7"/><rect width="${W}" height="${H}" filter="url(#${uid}k)"/>`;
+  }
+}
+
+/* ---------- Çerçeveler: görünen daire merkezde, yarıçap 540 ---------- */
+function frame(set) {
+  const c = set.fg;
+  switch (set.frame) {
+    case "ring": return `<circle cx="540" cy="960" r="430" fill="none" stroke="${c}" stroke-width="5" opacity=".9"/>`;
+    case "double": return `<circle cx="540" cy="960" r="440" fill="none" stroke="${c}" stroke-width="3" opacity=".85"/><circle cx="540" cy="960" r="412" fill="none" stroke="${c}" stroke-width="1.5" opacity=".55"/>`;
+    case "arch": return `<path d="M330 1250V860a210 210 0 0 1 420 0v390z" fill="none" stroke="${c}" stroke-width="5"/><path d="M300 1250h480" stroke="${c}" stroke-width="5"/>`;
+    case "disc": return `<circle cx="540" cy="960" r="330" fill="${set.disc}"/>`;
+    default: return "";
+  }
+}
+
+function buildSVG(setId, key, override) {
+  const set = Object.assign({}, SETS.find(s => s.id === setId), override || {});
+  const uid = `${setId}-${key}-${Math.random().toString(36).slice(2, 7)}`;
+  const c = set.fg;
+  let content;
+  if (set.type) {
+    const word = override && override.word ? override.word : set.icons[key];
+    const small = { saat: "SAATLERİMİZ", ozel: "GÜNLER", sss: "SORULAR" }[key];
+    content = `<text x="540" y="975" text-anchor="middle" font-family="Cormorant Garamond, Times New Roman, serif" font-style="italic" font-weight="500" font-size="${word.length > 3 ? 260 : 290}" fill="${c}">${word}</text>
+      <text x="540" y="1120" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="600" font-size="50" letter-spacing="8" fill="${c}" opacity=".85">${small}</text>`;
+  } else {
+    const icon = override && override.iconName ? override.iconName : set.icons[key];
+    const arch = set.frame === "arch";
+    const scale = set.label ? 2.9 : arch ? 2.4 : 3.4;
+    const cy = set.label ? 900 : arch ? 1050 : 960;
+    content = `<g transform="translate(540 ${cy}) scale(${scale}) translate(-100 -100)" fill="none" stroke="${c}" stroke-width="${set.sw * 1.35}" stroke-linecap="round" stroke-linejoin="round">${ICONS[icon](c)}</g>`;
+    if (set.label) {
+      const lbl = { saat: "SAATLER", ozel: "ÖZEL GÜNLER", sss: "S.S.S" }[key];
+      content += `<text x="540" y="1250" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="600" font-size="58" letter-spacing="10" fill="${c}">${lbl}</text>`;
+    }
+    if (set.dot) content += `<circle cx="540" cy="1320" r="20" fill="${set.dot}"/>`;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" preserveAspectRatio="xMidYMid slice">${background(set.bg, uid)}${frame(set)}${content}</svg>`;
+}
+/* Daire önizlemesi: hikâyenin ortadaki 1080×1080 alanı */
+const toCircle = svg => svg.replace('viewBox="0 0 1080 1920"', 'viewBox="0 420 1080 1080"');
+
+/* ---------- Render ---------- */
+const setsEl = document.getElementById("sets");
+SETS.forEach(set => {
+  const el = document.createElement("article");
+  el.className = "set";
+  el.innerHTML = `<div class="set-head">
+      <div class="set-name">${set.name}${set.tag ? `<span class="tag">${set.tag}</span>` : ""}</div>
+      <div class="set-note">${set.note}</div>
+      <div class="swatches">${set.swatch.map(s => `<i style="background:${s}"></i>`).join("")}</div>
+    </div>
+    <div class="row">${Object.keys(LABELS).map(k => `<button class="hl" type="button" data-set="${set.id}" data-key="${k}">
+      <div class="disc">${toCircle(buildSVG(set.id, k))}</div><span>${LABELS[k]}</span></button>`).join("")}</div>`;
+  setsEl.appendChild(el);
+});
+
+const sssEl = document.getElementById("sss");
+SSS_VARIANTS.forEach((v, i) => {
+  const ov = v.type ? { type: true, word: v.icon } : { type: false, iconName: v.icon, frame: SETS.find(s => s.id === v.set).frame, sw: SETS.find(s => s.id === v.set).sw || 4 };
+  const el = document.createElement("div");
+  el.className = "sss-card";
+  el.innerHTML = `<button class="hl" type="button" data-set="${v.set}" data-key="sss" data-v="${i}"><div class="disc">${toCircle(buildSVG(v.set, "sss", ov))}</div><span>${v.title}</span></button><small>${v.note}</small>`;
+  sssEl.appendChild(el);
+});
+
+const dlg = document.getElementById("dlg");
+document.addEventListener("click", e => {
+  const b = e.target.closest(".hl");
+  if (!b) return;
+  const set = SETS.find(s => s.id === b.dataset.set);
+  let ov, title = `${set.name} · ${LABELS[b.dataset.key]}`;
+  if (b.dataset.v) {
+    const v = SSS_VARIANTS[+b.dataset.v];
+    ov = v.type ? { type: true, word: v.icon } : { type: false, iconName: v.icon, sw: set.sw || 4 };
+    title = `SSS · ${v.title}`;
+  }
+  const svg = buildSVG(set.id, b.dataset.key, ov);
+  document.getElementById("dStory").innerHTML = svg;
+  document.getElementById("dBig").innerHTML = toCircle(svg);
+  document.getElementById("dTitle").textContent = title;
+  document.getElementById("dNote").textContent = "Solda yükleyeceğin 1080×1920 hikâye görseli, sağda profilde görünecek daire kırpımı.";
+  dlg.showModal();
+});
+document.getElementById("dClose").addEventListener("click", () => dlg.close());
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+</script>
