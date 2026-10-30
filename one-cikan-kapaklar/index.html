@@ -59,8 +59,19 @@ header p, .sec-intro { margin: 0; color: var(--muted); }
 .sss-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
 .sss-card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 12px 14px; display: grid; justify-items: center; align-content: start; gap: 8px; text-align: center; }
 .sss-card small { color: var(--muted); font-size: 12px; line-height: 1.4; }
-.mock { display: grid; gap: 14px; }
-.mock-frame { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.mock { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 28px; align-items: start; }
+.mock-frame { background: #fff; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; box-shadow: 0 18px 40px -24px rgba(0,0,0,.35); }
+.mock-side { display: grid; gap: 18px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); }
+.dl { display: grid; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.dl h3 { margin: 0 0 4px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.dl-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { font: inherit; font-size: 13.5px; font-weight: 600; padding: 9px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; display: inline-flex; gap: 7px; align-items: center; }
+.btn svg { width: 15px; height: 15px; flex: none; }
+.btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.btn:disabled { opacity: .55; cursor: progress; }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.status { font-size: 13px; color: var(--muted); min-height: 1.2em; margin: 0; }
+.all-dl { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; justify-content: space-between; }
 .mock-frame svg { display: block; width: 100%; height: auto; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { font: inherit; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; padding: 7px 13px 7px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
@@ -70,7 +81,7 @@ header p, .sec-intro { margin: 0; color: var(--muted); }
 .mock-cap { display: flex; gap: 6px 14px; flex-wrap: wrap; align-items: baseline; }
 .mock-cap b { font-family: var(--display); font-size: 24px; font-weight: 600; }
 .mock-cap span { color: var(--muted); font-size: 14px; }
-.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
 .gallery button { font: inherit; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 0 0 10px; overflow: hidden; cursor: pointer; display: grid; gap: 8px; text-align: left; }
 .gallery img { display: block; width: 100%; height: auto; background: #fff; }
 .gallery span { padding: 0 12px; font-weight: 600; font-size: 13.5px; }
@@ -94,6 +105,9 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
   .row { gap: 14px; }
   .modal { grid-template-columns: 1fr; justify-items: center; }
   .modal-side { justify-items: center; text-align: center; }
+  .mock { grid-template-columns: 1fr; }
+  .mock-frame { max-width: 380px; width: 100%; justify-self: center; }
+  .mock-side { position: static; }
 }
 @media (prefers-reduced-motion: reduce) { .hl .disc { transition: none; } }
 </style>
@@ -102,21 +116,32 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
   <header>
     <div class="eyebrow">imotim.avm · Öne Çıkanlar</div>
     <h1>Yeni öne çıkan kapakları</h1>
-    <p>16 farklı renk ve tasarım dili, gerçek profil ekran görüntüsü üzerinde. Bir set seç, profilde nasıl duracağını gör.</p>
+    <p>16 farklı renk ve tasarım dili, telefondaki gerçek profil ekranının üzerinde. Bir set seç, profilde nasıl duracağını gör, kapakları tek tek ya da set halinde indir.</p>
   </header>
 
   <section class="mock" id="mockSec">
-    <div class="chips" id="chips"></div>
     <div class="mock-frame" id="mock"></div>
-    <div class="mock-cap"><b id="mockName"></b><span id="mockNote"></span></div>
+    <div class="mock-side">
+      <div class="mock-cap"><b id="mockName"></b><span id="mockNote"></span></div>
+      <div class="chips" id="chips"></div>
+      <div class="dl" id="dlBox">
+        <h3>Bu seti indir</h3>
+        <div class="dl-row" id="dlCovers"></div>
+        <div class="dl-row">
+          <button class="btn" type="button" id="dlMock"></button>
+          <button class="btn primary" type="button" id="dlSet"></button>
+        </div>
+        <p class="status" id="dlStatus" aria-live="polite"></p>
+      </div>
+    </div>
   </section>
 
   <h2>Hepsi yan yana</h2>
-  <p class="sec-intro">Karşılaştırmak için 16 setin profil görünümü. Birine tıklayınca yukarıdaki büyük önizlemede açılır.</p>
+  <p class="sec-intro">16 setin profildeki öne çıkanlar satırı. Birine tıklayınca yukarıdaki telefon önizlemesinde açılır.</p>
   <section class="gallery" id="gallery"></section>
 
   <h2>Setlerin detayı</h2>
-  <p class="sec-intro">Kapaklara tıklayınca hikâye formatında (1080×1920) yükleyeceğin görseli görürsün.</p>
+  <p class="sec-intro">Kapaklara tıklayınca hikâye formatında (1080×1920) yükleyeceğin görseli görür, oradan indirebilirsin.</p>
 
   <section class="sets" id="sets"></section>
 
@@ -124,7 +149,11 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
   <p class="sec-intro">Aynı başlık, altı farklı yaklaşım. Hangi setle gideceğinize göre buradaki ikonu seçip o setin renklerine uyarlayabiliriz.</p>
   <section class="sss-grid" id="sss"></section>
 
-  <div class="files">Kapak PNG'leri (1080×1920, Instagram'a doğrudan yüklenecek boyutta) <code>one-cikan-kapaklar/png/</code>, profil önizlemeleri <code>one-cikan-kapaklar/mockup/</code> klasöründe.</div>
+  <div class="files all-dl">
+    <span>Tüm kapaklar (1080×1920 JPG, Instagram'a doğrudan yüklenecek boyutta), SSS alternatifleri ve 16 profil önizlemesi tek dosyada.</span>
+    <button class="btn primary" type="button" id="dlAll"></button>
+  </div>
+  <p class="status" id="dlAllStatus" aria-live="polite"></p>
 </div>
 
 <dialog id="dlg">
@@ -134,11 +163,13 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
       <div class="big" id="dBig"></div>
       <h3 id="dTitle"></h3>
       <p id="dNote"></p>
-      <button class="close" id="dClose" type="button">Kapat</button>
+      <div class="dl-row"><button class="btn primary" id="dDl" type="button"></button><button class="close" id="dClose" type="button">Kapat</button></div>
+      <p class="status" id="dStatus" aria-live="polite"></p>
     </div>
   </div>
 </dialog>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
 /* ---------- İkonlar: 200×200 kutu, merkez 100,100, yalnızca stroke ---------- */
 const ICONS = {
@@ -304,27 +335,84 @@ function buildSVG(setId, key, override) {
 /* Daire önizlemesi: hikâyenin ortadaki 1080×1080 alanı */
 const toCircle = svg => svg.replace('viewBox="0 0 1080 1920"', 'viewBox="0 420 1080 1080"');
 
-/* Profil önizlemesi: ekran görüntüsü 2000×954, öne çıkanlar merkezi y=801, aralık 172px */
-function mockSVG(setId) {
-  const xs = [582, 754, 926], keys = ["saat", "ozel", "sss"];
+/* Profil önizlemesi: iPhone ekran görüntüsü 920×2000, öne çıkanlar merkezi y=1155.5, aralık 187.5px */
+const SLUG = { saat: "saatlerimiz", ozel: "ozel-gunler", sss: "sss" };
+const setDir = id => String(SETS.findIndex(s => s.id === id) + 1).padStart(2, "0") + "-" + id;
+function mockSVG(setId, viewBox) {
+  const xs = [105.5, 293, 480.5], keys = ["saat", "ozel", "sss"], cy = 1155.5;
   const items = keys.map((k, i) => {
-    const cx = xs[i], inner = toCircle(buildSVG(setId, k)).replace("<svg ", `<svg x="${cx - 65}" y="736" width="130" height="130" `);
-    return `<circle cx="${cx}" cy="801" r="73" fill="#fff" stroke="#dbdbdb" stroke-width="3"/>
-      <clipPath id="cp-${setId}-${k}"><circle cx="${cx}" cy="801" r="65"/></clipPath>
+    const cx = xs[i], inner = toCircle(buildSVG(setId, k)).replace("<svg ", `<svg x="${cx - 59}" y="${cy - 59}" width="118" height="118" `);
+    return `<circle cx="${cx}" cy="${cy}" r="69.5" fill="#fff" stroke="#dcdfe3" stroke-width="8"/>
+      <clipPath id="cp-${setId}-${k}"><circle cx="${cx}" cy="${cy}" r="59"/></clipPath>
       <g clip-path="url(#cp-${setId}-${k})">${inner}</g>
-      <text x="${cx}" y="915" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#262626">${LABELS[k]}</text>`;
+      <text x="${cx}" y="1263" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="27" fill="#000">${LABELS[k]}</text>`;
   }).join("");
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="440 0 1280 954" role="img" aria-label="Profil önizlemesi"><image href="base.jpg" x="0" y="0" width="2000" height="954"/>${items}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox || "0 0 920 2000"}" role="img" aria-label="Profil önizlemesi"><image href="base.jpg" x="0" y="0" width="920" height="2000"/>${items}</svg>`;
 }
 
+/* ---------- İndirme ---------- */
+const DL_ICON = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8M4.5 7 8 10.5 11.5 7M2.5 13.5h11"/></svg>';
+const downloadsP = window.claude ? window.claude.use("downloads") : Promise.resolve(null);
+let downloadsApi; downloadsP.then(d => { downloadsApi = d; if (!d) document.querySelectorAll(".btn[data-dl]").forEach(b => b.hidden = true); });
+const ERR = { declined: "İndirme iptal edildi.", rate_limited: "Bir indirme penceresi zaten açık, onu kapatıp tekrar dene.", too_large: "Dosya bu görünümde indirilemeyecek kadar büyük." };
+async function saveFile(filename, getData, statusEl, btn) {
+  const d = await downloadsP;
+  if (!d) { statusEl.textContent = "Bu görünümde indirme kullanılamıyor. Sayfayı claude.ai üzerinden aç."; return; }
+  btn.disabled = true; statusEl.textContent = "Hazırlanıyor…";
+  try {
+    const data = await getData();
+    statusEl.textContent = "";
+    await d.save({ filename, data });
+    statusEl.textContent = `${filename} indirildi.`;
+  } catch (e) {
+    statusEl.textContent = (e && ERR[e.code]) || "İndirme yapılamadı, tekrar dene.";
+  } finally { btn.disabled = false; }
+}
+const fetchBlob = path => fetch(path).then(r => { if (!r.ok) throw new Error(path); return r.blob(); });
+async function zipOf(entries, onProgress) {
+  const zip = new JSZip(); let n = 0;
+  await Promise.all(entries.map(async ([src, name]) => { zip.file(name, await fetchBlob(src)); onProgress && onProgress(++n, entries.length); }));
+  return zip.generateAsync({ type: "blob", compression: "STORE" });
+}
+const setEntries = id => {
+  const dir = setDir(id);
+  return [...Object.keys(SLUG).map(k => [`dl/${dir}/${SLUG[k]}.jpg`, `${dir}/${SLUG[k]}.jpg`]), [`mockup/${dir}.jpg`, `${dir}/profil-onizleme.jpg`]];
+};
+function mkBtn(el, label, primary) { el.innerHTML = DL_ICON + label; el.dataset.dl = "1"; return el; }
+
 const chipsEl = document.getElementById("chips");
+const dlStatus = document.getElementById("dlStatus");
+let currentSet = "noir";
 function showMock(id) {
+  currentSet = id;
   const set = SETS.find(s => s.id === id);
   document.getElementById("mock").innerHTML = mockSVG(id);
   document.getElementById("mockName").textContent = set.name;
   document.getElementById("mockNote").textContent = set.note;
   chipsEl.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.id === id));
+  const covers = document.getElementById("dlCovers");
+  covers.innerHTML = "";
+  Object.keys(SLUG).forEach(k => {
+    const b = mkBtn(document.createElement("button"), LABELS[k]);
+    b.className = "btn"; b.type = "button"; b.hidden = downloadsApi === null;
+    b.addEventListener("click", () => saveFile(`imotim-${id}-${SLUG[k]}.jpg`, () => fetchBlob(`dl/${setDir(id)}/${SLUG[k]}.jpg`), dlStatus, b));
+    covers.appendChild(b);
+  });
+  dlStatus.textContent = "";
 }
+const dlMock = mkBtn(document.getElementById("dlMock"), "Profil önizlemesi");
+dlMock.addEventListener("click", () => saveFile(`imotim-${currentSet}-profil-onizleme.jpg`, () => fetchBlob(`mockup/${setDir(currentSet)}.jpg`), dlStatus, dlMock));
+const dlSet = mkBtn(document.getElementById("dlSet"), "Seti ZIP olarak indir");
+dlSet.addEventListener("click", () => saveFile(`imotim-${currentSet}-kapaklar.zip`, () => zipOf(setEntries(currentSet)), dlStatus, dlSet));
+const dlAll = mkBtn(document.getElementById("dlAll"), "Hepsini ZIP olarak indir");
+const dlAllStatus = document.getElementById("dlAllStatus");
+dlAll.addEventListener("click", () => saveFile("imotim-one-cikan-kapaklar.zip", () => {
+  const entries = SETS.flatMap(s => setEntries(s.id)).concat(SSS_VARIANTS.map((v, i) => {
+    const f = `${i + 1}-${v.icon.toLowerCase()}-${v.set}.jpg`; return [`dl/sss-alternatifleri/${f}`, `sss-alternatifleri/${f}`];
+  }));
+  return zipOf(entries, (n, t) => { dlAllStatus.textContent = `Hazırlanıyor… ${n}/${t}`; });
+}, dlAllStatus, dlAll));
+
 SETS.forEach(set => {
   const b = document.createElement("button");
   b.className = "chip"; b.type = "button"; b.dataset.id = set.id;
@@ -335,10 +423,10 @@ SETS.forEach(set => {
 showMock("noir");
 
 const galEl = document.getElementById("gallery");
-SETS.forEach((set, i) => {
+SETS.forEach(set => {
   const b = document.createElement("button");
   b.type = "button";
-  b.innerHTML = `<img src="mockup/${String(i + 1).padStart(2, "0")}-${set.id}.jpg" alt="${set.name} profil önizlemesi" loading="lazy" width="1280" height="954"><span>${set.name}</span>`;
+  b.innerHTML = `<img src="crop/${setDir(set.id)}.jpg" alt="${set.name} öne çıkanlar satırı" loading="lazy" width="920" height="300"><span>${set.name}</span>`;
   b.addEventListener("click", () => { showMock(set.id); document.getElementById("mockSec").scrollIntoView({ behavior: "smooth" }); });
   galEl.appendChild(b);
 });
@@ -368,8 +456,12 @@ SSS_VARIANTS.forEach((v, i) => {
 });
 
 const dlg = document.getElementById("dlg");
+let dlTarget;
+const dDl = mkBtn(document.getElementById("dDl"), "İndir");
+dDl.addEventListener("click", () => saveFile(dlTarget[1], () => fetchBlob(dlTarget[0]), document.getElementById("dStatus"), dDl));
 document.addEventListener("click", e => {
   const b = e.target.closest(".hl");
+  if (b && b.closest("#dlg")) return;
   if (!b) return;
   const set = SETS.find(s => s.id === b.dataset.set);
   let ov, title = `${set.name} · ${LABELS[b.dataset.key]}`;
@@ -378,6 +470,10 @@ document.addEventListener("click", e => {
     ov = v.type ? { type: true, word: v.icon } : { type: false, iconName: v.icon, sw: set.sw || 4 };
     title = `SSS · ${v.title}`;
   }
+  dlTarget = b.dataset.v
+    ? (() => { const v = SSS_VARIANTS[+b.dataset.v], f = `${+b.dataset.v + 1}-${v.icon.toLowerCase()}-${v.set}.jpg`; return [`dl/sss-alternatifleri/${f}`, `imotim-sss-${f}`]; })()
+    : [`dl/${setDir(set.id)}/${SLUG[b.dataset.key]}.jpg`, `imotim-${set.id}-${SLUG[b.dataset.key]}.jpg`];
+  document.getElementById("dStatus").textContent = "";
   const svg = buildSVG(set.id, b.dataset.key, ov);
   document.getElementById("dStory").innerHTML = svg;
   document.getElementById("dBig").innerHTML = toCircle(svg);
