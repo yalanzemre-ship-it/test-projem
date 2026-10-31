@@ -115,8 +115,8 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
 <div class="wrap">
   <header>
     <div class="eyebrow">imotim.avm · Öne Çıkanlar</div>
-    <h1>Yeni öne çıkan kapakları</h1>
-    <p>16 farklı renk ve tasarım dili, telefondaki gerçek profil ekranının üzerinde. Bir set seç, profilde nasıl duracağını gör, kapakları tek tek ya da set halinde indir.</p>
+    <h1>Beğenilen tasarım, yeni renkler</h1>
+    <p>Saat, takvim ve bilgi ikonlu çift çizgili tasarım aynen korundu, sadece renk değişti. 14 renk varyasyonu telefondaki gerçek profil ekranının üzerinde. Bir renk seç, nasıl duracağını gör, kapakları tek tek ya da set halinde indir.</p>
   </header>
 
   <section class="mock" id="mockSec">
@@ -136,8 +136,13 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
     </div>
   </section>
 
-  <h2>Hepsi yan yana</h2>
-  <p class="sec-intro">16 setin profildeki öne çıkanlar satırı. Birine tıklayınca yukarıdaki telefon önizlemesinde açılır.</p>
+  <div class="all-dl"><h2>Renk varyasyonları yan yana</h2><button class="btn" type="button" id="dlVar"></button></div>
+  <p class="status" id="dlVarStatus" aria-live="polite"></p>
+  <p class="sec-intro">Birine tıklayınca yukarıdaki telefon önizlemesinde açılır.</p>
+  <section class="gallery" id="galleryVar"></section>
+
+  <h2>Önceki 16 set</h2>
+  <p class="sec-intro">İlk turda hazırlanan farklı tasarım dilleri. Birine tıklayınca yukarıdaki telefon önizlemesinde açılır.</p>
   <section class="gallery" id="gallery"></section>
 
   <h2>Setlerin detayı</h2>
@@ -234,7 +239,21 @@ const SETS = [
   { id: "altin", name: "Altın Folyo", note: "Göz alıcı, kampanya enerjisi yüksek. Fazla parlak bulunursa ucuz duruş riski var, dikkatli seçilmeli.",
     swatch: ["#b8913f", "#e9d293", "#141312"], bg: "altin", fg: "#1a1611", frame: "ring", sw: 4, icons: { saat: "clock", ozel: "gift", sss: "bubbleQ" } },
   { id: "kahve", name: "Espresso Yazı", note: "Kalın, modern yazı. Okunurluğu yazı setleri içinde en iyisi, ama ikon kadar evrensel değil.",
-    swatch: ["#2d1f17", "#efe3cf"], bg: "kahve", fg: "#efe3cf", frame: "none", type: true, sans: true, icons: { saat: "SAAT", ozel: "ÖZEL", sss: "SSS" } }
+    swatch: ["#2d1f17", "#efe3cf"], bg: "kahve", fg: "#efe3cf", frame: "none", type: true, sans: true, icons: { saat: "SAAT", ozel: "ÖZEL", sss: "SSS" } },
+  { id: "t-gece", variant: true, name: "Gece Mavisi", note: "Lacivert ama koyu ve derin; logonun siyah-beyazıyla çatışmadan premium durur.", swatch: ["#22406b", "#f5ead8"], bg: "radial", c1: "#22406b", c2: "#0f1f3a", fg: "#f5ead8", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-antrasit", variant: true, name: "Antrasit", note: "En nötr, en güvenli seçenek. Her içerik ve her ürün fotoğrafıyla uyumlu.", swatch: ["#45474c", "#f3efe8"], bg: "radial", c1: "#45474c", c2: "#1e1f22", fg: "#f3efe8", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-siyahaltin", variant: true, name: "Siyah & Altın Çizgi", note: "Aynı tasarım, çizgiler altın. Setin en lüks duran hali.", swatch: ["#24211c", "#d6b574"], bg: "radial", c1: "#24211c", c2: "#0b0a09", fg: "#d6b574", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-zumrut", variant: true, name: "Zümrüt", note: "Koyu yeşil, ahşap ve doğal kumaşlı ürünlerle çok iyi gider.", swatch: ["#1f5e4a", "#f1e6cf"], bg: "radial", c1: "#1f5e4a", c2: "#0b2d23", fg: "#f1e6cf", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-petrol", variant: true, name: "Petrol Mavisi", note: "Mavi ile yeşil arası; modern, salon ve yemek odası içerikleriyle uyumlu.", swatch: ["#22636b", "#f2ede4"], bg: "radial", c1: "#22636b", c2: "#0d3237", fg: "#f2ede4", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-bordo", variant: true, name: "Bordo", note: "Sıcak ve klasik; kadife koltuk, klasik takım hissi verir.", swatch: ["#7d2535", "#f6e7d6"], bg: "radial", c1: "#7d2535", c2: "#43101b", fg: "#f6e7d6", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-espresso", variant: true, name: "Espresso", note: "Kahve tonu doğrudan mobilya ve ceviz ahşabı çağrıştırır.", swatch: ["#5c3b29", "#f3e6d2"], bg: "radial", c1: "#5c3b29", c2: "#2a1911", fg: "#f3e6d2", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-murdum", variant: true, name: "Mürdüm", note: "Farklı ve akılda kalır; diğer mobilya hesaplarından ayrışır.", swatch: ["#55305a", "#f4e9e1"], bg: "radial", c1: "#55305a", c2: "#2a1430", fg: "#f4e9e1", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-zeytin", variant: true, name: "Zeytin Yeşili", note: "Toprak tonu, doğal ve sakin; Japandi tarzı ürünlere uyar.", swatch: ["#666b45", "#f2ecd9"], bg: "radial", c1: "#666b45", c2: "#353821", fg: "#f2ecd9", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-adacayi", variant: true, name: "Adaçayı", note: "Açık ve yumuşak yeşil. Koyu tonlardan daha az kontrast.", swatch: ["#8fa189", "#fbf8f1"], bg: "radial", c1: "#8fa189", c2: "#62745c", fg: "#fbf8f1", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-tas", variant: true, name: "Taş Gri", note: "Açık gri, sade ve modern. Beyaz profil zemininde biraz soluk kalabilir.", swatch: ["#a8a49c", "#ffffff"], bg: "radial", c1: "#a8a49c", c2: "#78746c", fg: "#ffffff", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-bej", variant: true, name: "Bej", note: "Açık, sıcak ve ferah. Çizgiler koyu kahve; beyaz zeminde kenarı silikleşebilir.", swatch: ["#e8dccb", "#4a3527"], bg: "radial", c1: "#e8dccb", c2: "#cdbb9f", fg: "#4a3527", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-pudra", variant: true, name: "Pudra", note: "Yumuşak pembe-bej; yatak odası ve genç odası içerikleriyle iyi gider.", swatch: ["#ebd2c8", "#5a2f28"], bg: "radial", c1: "#ebd2c8", c2: "#d4ad9f", fg: "#5a2f28", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } },
+  { id: "t-lacturuncu", variant: true, name: "Lacivert + Turuncu Çizgi", note: "Zemin koyu lacivert, çizgiler mevcut turuncu. Turuncuyu marka rengi olarak tutmanın en hafif yolu.", swatch: ["#1b2c4c", "#f08a4b"], bg: "radial", c1: "#1b2c4c", c2: "#0d1830", fg: "#f08a4b", frame: "double", sw: 4, icons: { saat: "clockArrow", ozel: "calStar", sss: "info" } }
 ];
 
 const SSS_VARIANTS = [
@@ -247,7 +266,7 @@ const SSS_VARIANTS = [
 ];
 
 /* ---------- Arka planlar (1080×1920) ---------- */
-function background(kind, uid) {
+function background(kind, uid, set) {
   const W = 1080, H = 1920;
   switch (kind) {
     case "noir": return `<defs><radialGradient id="${uid}g" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#1f1c18"/><stop offset="1" stop-color="#0d0c0b"/></radialGradient></defs><rect width="${W}" height="${H}" fill="url(#${uid}g)"/>`;
@@ -267,6 +286,7 @@ function background(kind, uid) {
         <feColorMatrix type="matrix" values="0 0 0 0 .45  0 0 0 0 .44  0 0 0 0 .42  0 0 0 1 0"/></filter></defs>
         <rect width="${W}" height="${H}" fill="#f3f1ed"/><rect width="${W}" height="${H}" filter="url(#${uid}m)"/>`;
     case "bordo": return `<defs><radialGradient id="${uid}g" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#6e1d2a"/><stop offset="1" stop-color="#3f0f17"/></radialGradient></defs><rect width="${W}" height="${H}" fill="url(#${uid}g)"/>`;
+    case "radial": return `<defs><radialGradient id="${uid}g" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="${set.c1}"/><stop offset="1" stop-color="${set.c2}"/></radialGradient></defs><rect width="${W}" height="${H}" fill="url(#${uid}g)"/>`;
     case "adacayi": return `<rect width="${W}" height="${H}" fill="#7d8f78"/>`;
     case "kahve": return `<rect width="${W}" height="${H}" fill="#2d1f17"/>`;
     case "pudra": return `<rect width="${W}" height="${H}" fill="#e8d0c7"/>`;
@@ -330,7 +350,7 @@ function buildSVG(setId, key, override) {
     }
     if (set.dot) content += `<circle cx="540" cy="1320" r="20" fill="${set.dot}"/>`;
   }
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" preserveAspectRatio="xMidYMid slice">${background(set.bg, uid)}${frame(set)}${content}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" preserveAspectRatio="xMidYMid slice">${background(set.bg, uid, set)}${frame(set)}${content}</svg>`;
 }
 /* Daire önizlemesi: hikâyenin ortadaki 1080×1080 alanı */
 const toCircle = svg => svg.replace('viewBox="0 0 1080 1920"', 'viewBox="0 420 1080 1080"');
@@ -406,6 +426,10 @@ const dlSet = mkBtn(document.getElementById("dlSet"), "Seti ZIP olarak indir");
 dlSet.addEventListener("click", () => saveFile(`imotim-${currentSet}-kapaklar.zip`, () => zipOf(setEntries(currentSet)), dlStatus, dlSet));
 const dlAll = mkBtn(document.getElementById("dlAll"), "Hepsini ZIP olarak indir");
 const dlAllStatus = document.getElementById("dlAllStatus");
+const dlVar = mkBtn(document.getElementById("dlVar"), "Tüm renkleri ZIP olarak indir");
+const dlVarStatus = document.getElementById("dlVarStatus");
+dlVar.addEventListener("click", () => saveFile("imotim-renk-varyasyonlari.zip",
+  () => zipOf(SETS.filter(s => s.variant).flatMap(s => setEntries(s.id)), (n, t) => { dlVarStatus.textContent = `Hazırlanıyor… ${n}/${t}`; }), dlVarStatus, dlVar));
 dlAll.addEventListener("click", () => saveFile("imotim-one-cikan-kapaklar.zip", () => {
   const entries = SETS.flatMap(s => setEntries(s.id)).concat(SSS_VARIANTS.map((v, i) => {
     const f = `${i + 1}-${v.icon.toLowerCase()}-${v.set}.jpg`; return [`dl/sss-alternatifleri/${f}`, `sss-alternatif-${f}`];
@@ -413,27 +437,27 @@ dlAll.addEventListener("click", () => saveFile("imotim-one-cikan-kapaklar.zip", 
   return zipOf(entries, (n, t) => { dlAllStatus.textContent = `Hazırlanıyor… ${n}/${t}`; });
 }, dlAllStatus, dlAll));
 
-SETS.forEach(set => {
+SETS.filter(s => s.variant || s.id === "turuncu").forEach(set => {
   const b = document.createElement("button");
   b.className = "chip"; b.type = "button"; b.dataset.id = set.id;
-  b.innerHTML = `<i style="background:linear-gradient(135deg, ${set.swatch[0]} 50%, ${set.swatch[1]} 50%)"></i>${set.name}`;
+  b.innerHTML = `<i style="background:linear-gradient(135deg, ${set.swatch[0]} 50%, ${set.swatch[1]} 50%)"></i>${set.id === "turuncu" ? "Mevcut turuncu" : set.name}`;
   b.addEventListener("click", () => showMock(set.id));
   chipsEl.appendChild(b);
 });
-showMock("noir");
+showMock("t-gece");
 
-const galEl = document.getElementById("gallery");
+const galVarEl = document.getElementById("galleryVar"), galEl = document.getElementById("gallery");
 SETS.forEach(set => {
   const b = document.createElement("button");
   b.type = "button";
   b.innerHTML = `<img src="crop/${setDir(set.id)}.jpg" alt="${set.name} öne çıkanlar satırı" loading="lazy" width="920" height="300"><span>${set.name}</span>`;
   b.addEventListener("click", () => { showMock(set.id); document.getElementById("mockSec").scrollIntoView({ behavior: "smooth" }); });
-  galEl.appendChild(b);
+  (set.variant ? galVarEl : galEl).appendChild(b);
 });
 
 /* ---------- Render ---------- */
 const setsEl = document.getElementById("sets");
-SETS.forEach(set => {
+SETS.filter(s => !s.variant).forEach(set => {
   const el = document.createElement("article");
   el.className = "set";
   el.innerHTML = `<div class="set-head">
